@@ -114,7 +114,18 @@ export function SectionEyebrow({ children }: { children: React.ReactNode }) {
   return <div className="text-center text-xs font-bold uppercase tracking-widest text-primary">{children}</div>;
 }
 export function SectionHeading({ children }: { children: React.ReactNode }) {
-  return <h1 className="mt-2 text-center text-3xl font-extrabold tracking-tight md:text-4xl">{children}</h1>;
+  return <h2 className="mt-2 text-center text-3xl font-extrabold tracking-tight md:text-4xl">{children}</h2>;
+}
+export function PageHero({ eyebrow, title, sub }: { eyebrow?: string; title: string; sub?: string }) {
+  return (
+    <section className="bg-surface py-16 md:py-20">
+      <div className="mx-auto max-w-4xl px-4 text-center md:px-6">
+        {eyebrow && <div className="text-xs font-bold uppercase tracking-widest text-primary">{eyebrow}</div>}
+        <h1 className="mt-2 text-4xl font-extrabold tracking-tight md:text-5xl">{title}</h1>
+        {sub && <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">{sub}</p>}
+      </div>
+    </section>
+  );
 }
 export function SectionSub({ children }: { children: React.ReactNode }) {
   return <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">{children}</p>;
