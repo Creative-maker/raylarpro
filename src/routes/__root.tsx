@@ -122,10 +122,21 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+function RootComponent() {
+  const { queryClient } = Route.useRouteContext();
+
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="min-h-screen bg-background text-foreground">
+        <Marquee />
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+        <FloatingButtons />
+      </div>
     </QueryClientProvider>
   );
 }
+
