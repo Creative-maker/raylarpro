@@ -16,6 +16,7 @@ import "@fontsource/inter/700.css";
 import "@fontsource/inter/800.css";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Marquee, Header, Footer, FloatingButtons } from "../components/site-chrome";
 
 function NotFoundComponent() {
   return (
