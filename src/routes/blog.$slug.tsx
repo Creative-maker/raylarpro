@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Calendar, Clock, MessageCircle, Tag } from "lucide-react";
-import { POSTS, CALENDLY, WHATSAPP } from "@/components/site-data";
+import { POSTS, CALENDLY, WHATSAPP, type Post } from "@/components/site-data";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
