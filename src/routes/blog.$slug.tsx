@@ -47,7 +47,7 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 function PostPage() {
-  const { post } = Route.useLoaderData();
+  const { post } = Route.useLoaderData() as { post: Post };
   const related = POSTS.filter((p) => p.slug !== post.slug && p.tag === post.tag).slice(0, 3);
   const fallback = POSTS.filter((p) => p.slug !== post.slug).slice(0, 3);
   const recs = related.length ? related : fallback;
