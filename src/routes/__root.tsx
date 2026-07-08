@@ -132,7 +132,7 @@ function RootComponent() {
         <main>
           <Outlet />
         </main>
-        <Footer />
+        <PremiumFooter />
         <FloatingButtons />
       </div>
     </QueryClientProvider>
