@@ -16,7 +16,8 @@ import "@fontsource/inter/700.css";
 import "@fontsource/inter/800.css";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { Marquee, Header, Footer, FloatingButtons } from "../components/site-chrome";
+import { Marquee, Header, FloatingButtons } from "../components/site-chrome";
+import { PremiumFooter } from "../components/premium-footer";
 
 function NotFoundComponent() {
   return (
@@ -131,7 +132,7 @@ function RootComponent() {
         <main>
           <Outlet />
         </main>
-        <Footer />
+        <PremiumFooter />
         <FloatingButtons />
       </div>
     </QueryClientProvider>
