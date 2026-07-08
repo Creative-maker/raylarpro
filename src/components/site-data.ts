@@ -86,11 +86,209 @@ export const FAQS = [
   { q: "What are your payment terms?", a: "I typically work with a 50% upfront deposit and the remaining 50% upon completion. For larger projects, we can discuss milestone payments. Everything is clear and agreed before we begin." },
 ];
 
-export const POSTS = [
-  { slug: "shopify-conversion-checklist", title: "The 12-Point Shopify Conversion Checklist", tag: "CRO", date: "Jun 2026", desc: "The exact checks I run on every store audit — from above-the-fold clarity to checkout friction — that consistently unlock more revenue.", img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=520&fit=crop" },
-  { slug: "klaviyo-flows-that-print-money", title: "5 Klaviyo Flows Every Store Should Have Live", tag: "Email", date: "May 2026", desc: "Welcome, browse abandon, cart abandon, post-purchase, winback — how to set each one up and what to say inside them.", img: "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=800&h=520&fit=crop" },
-  { slug: "shopify-speed-optimization", title: "Shopify Speed: A Practical Guide to a 90+ Score", tag: "Performance", date: "Apr 2026", desc: "The apps to remove, the images to compress, and the theme tweaks that actually move Core Web Vitals for Shopify.", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=520&fit=crop" },
-  { slug: "product-page-that-sells", title: "Anatomy of a Product Page That Sells", tag: "Design", date: "Mar 2026", desc: "Hero, trust, social proof, sticky ATC, upsells — a section-by-section breakdown you can copy for your own store.", img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&h=520&fit=crop" },
-  { slug: "seo-for-shopify-stores", title: "Technical SEO for Shopify: What Actually Matters", tag: "SEO", date: "Feb 2026", desc: "Beyond meta tags: internal linking, collection structure, canonicals, and the schema Shopify does not add for you.", img: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&h=520&fit=crop" },
-  { slug: "shopify-vs-woocommerce", title: "Shopify vs WooCommerce in 2026 — Honest Take", tag: "Strategy", date: "Jan 2026", desc: "When Shopify is the right call, when Woo makes more sense, and the total cost of ownership nobody talks about.", img: "https://images.unsplash.com/photo-1556742212-5b321f3c261b?w=800&h=520&fit=crop" },
+export type Post = {
+  slug: string;
+  title: string;
+  tag: string;
+  date: string;
+  readTime: string;
+  desc: string;
+  img: string;
+  intro: string;
+  sections: { heading: string; body: string[]; list?: string[] }[];
+  takeaway: string;
+};
+
+export const POSTS: Post[] = [
+  {
+    slug: "shopify-conversion-checklist",
+    title: "The 12-Point Shopify Conversion Checklist",
+    tag: "CRO",
+    date: "Jun 2026",
+    readTime: "7 min read",
+    desc: "The exact checks I run on every store audit — from above-the-fold clarity to checkout friction — that consistently unlock more revenue.",
+    img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600&h=900&fit=crop",
+    intro: "Most Shopify stores lose sales in the same twelve places. I have audited over 500 stores, and the pattern rarely changes — small friction points quietly bleed revenue every day. This checklist is the one I actually use before quoting an optimization project. Work through it top to bottom and you will almost always find at least three fixes worth thousands.",
+    sections: [
+      {
+        heading: "1. Above-the-fold clarity",
+        body: ["Within three seconds a visitor should know what you sell, who it is for, and why it matters. If your hero relies on a slideshow, a vague tagline, or a stock photo, you are burning attention."],
+        list: ["One clear product headline", "A supporting sentence with the outcome", "A single primary call-to-action button", "Trust cue (rating, press logo, or guarantee)"],
+      },
+      {
+        heading: "2. Product page trust stack",
+        body: ["Every product page needs reviews near the price, shipping and return terms in plain English, and at least one lifestyle image showing the product in use. Trust is not a badge — it is the sum of small honest details."],
+      },
+      {
+        heading: "3. Mobile-first checkout",
+        body: ["Over 70% of Shopify traffic is mobile. Test the checkout on a real phone, not just the theme editor preview. Watch for form fields that zoom, tap targets under 44px, and payment icons that push the total below the fold."],
+      },
+      {
+        heading: "4. Speed and Core Web Vitals",
+        body: ["Anything above a 3-second LCP costs you conversions. Compress hero images, remove unused apps, and defer any script that is not required for the first paint."],
+      },
+      {
+        heading: "5. Clear pricing and shipping",
+        body: ["Surprise shipping costs are the #1 reason for abandonment. Show shipping thresholds in the announcement bar and on the cart page, not just at checkout."],
+      },
+      {
+        heading: "6. Cart and checkout friction",
+        body: ["Kill anything the buyer does not need to see: extra upsell popups, coupon fields that invite hunting, and account creation before purchase. Guest checkout should be the default."],
+      },
+    ],
+    takeaway: "Pick three items from this list, ship them this week, and measure the result for 14 days. Conversion work compounds — small wins stacked over a quarter routinely deliver 20–40% lifts.",
+  },
+  {
+    slug: "klaviyo-flows-that-print-money",
+    title: "5 Klaviyo Flows Every Store Should Have Live",
+    tag: "Email",
+    date: "May 2026",
+    readTime: "8 min read",
+    desc: "Welcome, browse abandon, cart abandon, post-purchase, winback — how to set each one up and what to say inside them.",
+    img: "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=1600&h=900&fit=crop",
+    intro: "If email is under 20% of your Shopify revenue, you are almost certainly missing one of these five automated flows. They run in the background, they cost nothing after setup, and together they typically add another 15–25% on top of whatever you are doing today.",
+    sections: [
+      {
+        heading: "1. Welcome series (3 emails)",
+        body: ["Trigger: signs up via popup or footer. Send the discount immediately, then a brand story email 24 hours later, then a bestsellers email 48 hours after that. Keep the discount valid for 7 days to create honest urgency."],
+      },
+      {
+        heading: "2. Browse abandonment",
+        body: ["Trigger: viewed product but did not add to cart. One email, sent 4 hours later, showing the exact product with two related items. No discount here — this is a reminder, not a bribe."],
+      },
+      {
+        heading: "3. Cart abandonment (3 emails)",
+        body: ["Send at 1 hour, 24 hours, and 48 hours. The first is a soft reminder, the second surfaces reviews and answers common objections, the third offers a small incentive if the AOV justifies it."],
+      },
+      {
+        heading: "4. Post-purchase",
+        body: ["The most under-used flow in Shopify. Thank the customer, set delivery expectations, ask for a review at day 14, and cross-sell a complementary product at day 30. This is where repeat customers are made."],
+      },
+      {
+        heading: "5. Winback",
+        body: ["Trigger: no purchase in 90 days. Two emails — the first says we miss you with a small offer, the second is a last-chance in seven days. Anyone who does not open goes to a sunset flow to protect your sender reputation."],
+      },
+    ],
+    takeaway: "Set these five up in order over one week. Do not chase perfect copy — get them live, then improve based on real open and click data after 30 days.",
+  },
+  {
+    slug: "shopify-speed-optimization",
+    title: "Shopify Speed: A Practical Guide to a 90+ Score",
+    tag: "Performance",
+    date: "Apr 2026",
+    readTime: "6 min read",
+    desc: "The apps to remove, the images to compress, and the theme tweaks that actually move Core Web Vitals for Shopify.",
+    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&h=900&fit=crop",
+    intro: "Shopify speed scores are misunderstood. Google looks at Core Web Vitals from real visitors, not the theme editor. Here is what actually moves the number that matters — Largest Contentful Paint under 2.5 seconds on mobile.",
+    sections: [
+      {
+        heading: "Audit your apps first",
+        body: ["Every installed app injects JavaScript into every page, whether the app is used there or not. Uninstall — do not just disable — anything that has not paid for itself in the last 60 days. This single step often adds 10–20 points to a score."],
+      },
+      {
+        heading: "Compress and size your hero image",
+        body: ["The hero image is almost always the LCP element. Serve it as WebP, size it to the exact viewport width, and set fetchpriority=high in the theme. Do not use a slideshow above the fold — every slide loads before the first paint."],
+      },
+      {
+        heading: "Lazy load everything else",
+        body: ["Product images below the fold, collection thumbnails, testimonials — anything not visible on load should carry loading=lazy. Modern Shopify themes support this out of the box; older themes need a small snippet."],
+      },
+      {
+        heading: "Preconnect to critical origins",
+        body: ["Add preconnect hints for your CDN, Klaviyo, and your review platform in the theme.liquid head. This shaves 100–300ms off first paint."],
+      },
+    ],
+    takeaway: "Speed is a compounding advantage — faster stores rank higher, convert more, and cost less to advertise. Aim for 90+ mobile in Lighthouse and under 2.5s LCP in real user data.",
+  },
+  {
+    slug: "product-page-that-sells",
+    title: "Anatomy of a Product Page That Sells",
+    tag: "Design",
+    date: "Mar 2026",
+    readTime: "9 min read",
+    desc: "Hero, trust, social proof, sticky ATC, upsells — a section-by-section breakdown you can copy for your own store.",
+    img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&h=900&fit=crop",
+    intro: "Great product pages are not designed — they are engineered. Every section answers a specific question the buyer is asking in that moment. Here is the structure I use on every store I build, top to bottom.",
+    sections: [
+      {
+        heading: "Hero: gallery + buy box",
+        body: ["Left: 4–6 images including one lifestyle, one scale reference, one detail shot, and one back-of-pack or ingredient shot. Right: product name, star rating linked to reviews, price, variant selector, quantity, and a single high-contrast Add to Cart button."],
+      },
+      {
+        heading: "Trust bar",
+        body: ["Directly under the buy box: free shipping threshold, return window, and any relevant guarantees. Keep it to three items — more feels defensive."],
+      },
+      {
+        heading: "Benefits, not features",
+        body: ["Three to five icon-plus-line rows. Translate every spec into a customer outcome. Instead of 300gsm cotton write feels heavy and premium after the first wash."],
+      },
+      {
+        heading: "Social proof block",
+        body: ["Reviews with photos beat any copy you can write. Show the average rating, a distribution bar, and the two most recent verified reviews with images. Link to the full list."],
+      },
+      {
+        heading: "Sticky add-to-cart on mobile",
+        body: ["Once the buy box scrolls out of view, a slim sticky bar with price and ATC keeps the offer one tap away. This alone typically lifts mobile conversion by 5–10%."],
+      },
+    ],
+    takeaway: "A great product page is a conversation, not a spec sheet. Answer every objection in order, keep the buy button always reachable, and let real customer photos do the closing.",
+  },
+  {
+    slug: "seo-for-shopify-stores",
+    title: "Technical SEO for Shopify: What Actually Matters",
+    tag: "SEO",
+    date: "Feb 2026",
+    readTime: "7 min read",
+    desc: "Beyond meta tags: internal linking, collection structure, canonicals, and the schema Shopify does not add for you.",
+    img: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=1600&h=900&fit=crop",
+    intro: "Most Shopify SEO advice stops at title tags and alt text. That is table stakes. The stores that actually rank do four things Shopify does not handle for you out of the box.",
+    sections: [
+      {
+        heading: "Fix the duplicate URL problem",
+        body: ["Shopify serves the same product under /products/x and /collections/y/products/x. Without a canonical pointing to the clean /products/x URL, Google splits ranking signals across both. Most themes get this right — verify yours does."],
+      },
+      {
+        heading: "Build a real collection structure",
+        body: ["Collections are your category pages and they rank for high-intent queries. Give each one a unique H1, a 150-word intro above the products, and internal links to related collections. Do not leave the default template."],
+      },
+      {
+        heading: "Add Product schema Shopify skips",
+        body: ["Shopify adds basic Product schema but usually misses aggregateRating, review, and brand. Adding these with a small snippet unlocks rich results — stars in search — and measurably lifts click-through."],
+      },
+      {
+        heading: "Internal linking from blog to product",
+        body: ["Every blog article should link to at least two relevant collection or product pages using descriptive anchor text. This is how content actually drives revenue, not just traffic."],
+      },
+    ],
+    takeaway: "Technical SEO for Shopify is not glamorous, but it is the difference between a store that ranks and a store that pays for every visitor. Fix the four items above before spending anything on content or backlinks.",
+  },
+  {
+    slug: "shopify-vs-woocommerce",
+    title: "Shopify vs WooCommerce in 2026 — Honest Take",
+    tag: "Strategy",
+    date: "Jan 2026",
+    readTime: "6 min read",
+    desc: "When Shopify is the right call, when Woo makes more sense, and the total cost of ownership nobody talks about.",
+    img: "https://images.unsplash.com/photo-1556742212-5b321f3c261b?w=1600&h=900&fit=crop",
+    intro: "I build on both platforms. The right choice depends less on features and more on how much time and money you actually want to spend keeping the lights on. Here is the honest breakdown after 500+ builds.",
+    sections: [
+      {
+        heading: "Choose Shopify when",
+        body: ["You want to focus on selling, not maintaining. Hosting, security, PCI compliance, and payment processing are handled. The app ecosystem covers 95% of what a growing DTC brand needs, and Shop Pay is genuinely the fastest checkout on the internet."],
+      },
+      {
+        heading: "Choose WooCommerce when",
+        body: ["You already run WordPress for a content-heavy site, you sell something Shopify restricts (certain regulated categories), or you need very custom checkout logic that Shopify Plus pricing cannot justify."],
+      },
+      {
+        heading: "The real cost comparison",
+        body: ["Shopify looks more expensive on paper — the monthly fee plus apps. But once you add hosting, security, backup, developer maintenance, and the inevitable Woo plugin conflicts, WooCommerce usually costs more over three years for a store doing real volume."],
+      },
+      {
+        heading: "Migration is not scary",
+        body: ["If you are on the wrong platform, moving is a two to four week project, not a rebuild-from-scratch. Products, customers, and order history all migrate cleanly with the right tools."],
+      },
+    ],
+    takeaway: "Pick the platform that lets you spend the most time on marketing and product, not on maintenance. For 9 out of 10 DTC brands under 8-figures, that is Shopify.",
+  },
 ];
