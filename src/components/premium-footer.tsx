@@ -75,9 +75,7 @@ export function PremiumFooter() {
           </div>
           <div className="mx-auto flex max-w-full flex-wrap items-center justify-center gap-2 px-2 sm:gap-3 md:gap-4">
             {SKILLS.map((s, i) => {
-              const rot = typeof window !== "undefined" && window.innerWidth < 640
-                ? ((i * 53) % 12) - 6
-                : ((i * 53) % 30) - 15;
+              const rot = ((i * 53) % 20) - 10;
               return <SkillPill key={s} label={s} i={i} rot={rot} />;
             })}
           </div>
