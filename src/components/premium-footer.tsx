@@ -17,9 +17,8 @@ const TONES = [
   "bg-[#16A34A] text-white border-[#16A34A]/40",
 ];
 
-function SkillPill({ label, i }: { label: string; i: number }) {
+function SkillPill({ label, i, rot }: { label: string; i: number; rot: number }) {
   const tone = TONES[i % 3];
-  const rot = ((i * 53) % 30) - 15;
   const delay = (i % 6) * 0.15;
   return (
     <motion.span
@@ -28,7 +27,7 @@ function SkillPill({ label, i }: { label: string; i: number }) {
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.5, delay: i * 0.03, ease: "easeOut" }}
       whileHover={{ y: -6, rotate: 0, scale: 1.05 }}
-      className={`inline-flex select-none items-center rounded-full border px-4 py-2 text-sm font-semibold shadow-[0_6px_20px_-8px_rgba(0,0,0,0.25)] backdrop-blur transition-all ${tone}`}
+      className={`inline-flex max-w-full select-none items-center whitespace-nowrap rounded-full border px-3 py-1.5 text-xs font-semibold shadow-[0_6px_20px_-8px_rgba(0,0,0,0.25)] backdrop-blur transition-all sm:px-4 sm:py-2 sm:text-sm ${tone}`}
       style={{ transform: `rotate(${rot}deg)` }}
     >
       <motion.span
