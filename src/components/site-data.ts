@@ -11,11 +11,13 @@ export const MARQUEE_TEXT =
 export const NAV = [
   { label: "Home", to: "/" },
   { label: "Services", to: "/services" },
+  { label: "Portfolio", to: "/case-studies" },
+  { label: "Process", to: "/about" },
   { label: "About", to: "/about" },
-  { label: "Case Studies", to: "/case-studies" },
-  { label: "Blog & Resources", to: "/blog" },
+  { label: "Blog", to: "/blog" },
   { label: "Contact", to: "/contact" },
 ] as const;
+
 
 export const STATS = [
   { icon: Rocket, value: "500+", label: "Projects Completed", tone: "bg-emerald-100 text-emerald-600" },
