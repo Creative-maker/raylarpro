@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Star, ChevronLeft, ChevronRight,
+  Star, ChevronLeft, ChevronRight, MessageCircle, Calendar,
   ShoppingBag, CheckCircle2, ArrowRight, Sparkles, Search,
   TrendingUp, Zap, MousePointer2, BarChart3, Rocket,
 } from "lucide-react";
