@@ -11,6 +11,7 @@ import { SectionEyebrow, SectionHeading, SectionSub, PillCTA } from "@/component
 import {
   STATS, CERTS, TESTIMONIALS, EXPERTISE, PROJECTS, WHATSAPP, CALENDLY,
 } from "@/components/site-data";
+import { EcommerceStack } from "@/components/ecommerce-stack";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,6 +34,7 @@ function HomePage() {
       <Certifications />
       <TestimonialsCarousel />
       <ExpertisePreview />
+      <EcommerceStack />
       <ProjectsPreview />
       <FreeTool />
       <CTA />
