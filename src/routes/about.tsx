@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CheckCircle2, MessageCircle, Calendar, MapPin, Star } from "lucide-react";
-import profileImg from "@/assets/profile.jpg";
+import profileImg from "@/assets/about-shot.png";
 import { PageHero } from "@/components/site-chrome";
 import { CERTS, WHATSAPP, CALENDLY } from "@/components/site-data";
 
