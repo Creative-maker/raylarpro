@@ -301,36 +301,73 @@ export function EcommerceStack() {
         <div className="relative mt-16 hidden md:block">
           <div className="relative mx-auto" style={{ width: W, height: H, maxWidth: "100%" }}>
             {/* connecting lines */}
-            <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 h-full w-full">
+            <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 h-full w-full overflow-visible">
               <defs>
                 <radialGradient id="linePulse" cx="50%" cy="50%" r="50%">
                   <stop offset="0%" stopColor="#16A34A" stopOpacity="0.9" />
                   <stop offset="100%" stopColor="#16A34A" stopOpacity="0" />
                 </radialGradient>
+                <filter id="lineGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="2.5" result="b" />
+                  <feMerge>
+                    <feMergeNode in="b" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
               </defs>
               {positions.map(({ p, x, y }, i) => {
-                const isHot = (hoverId ?? activeId) === p.id;
+                const current = hoverId ?? activeId;
+                const isHot = current === p.id;
+                const anyHot = !!current && current !== "shopify";
+                const isDimLine = anyHot && !isHot;
                 return (
                   <g key={p.id}>
                     <motion.line
                       x1={CENTER.x} y1={CENTER.y} x2={x} y2={y}
-                      stroke={isHot ? "#16A34A" : "#0B0B0B"}
-                      strokeOpacity={isHot ? 0.45 : 0.08}
-                      strokeWidth={isHot ? 1.25 : 1}
-                      initial={{ pathLength: 0 }}
-                      animate={inView ? { pathLength: 1 } : {}}
-                      transition={{ duration: 0.9, delay: 0.3 + i * 0.06, ease: "easeOut" }}
+                      stroke="#0B0B0B"
+                      initial={{ pathLength: 0, strokeOpacity: 0 }}
+                      animate={inView ? {
+                        pathLength: 1,
+                        strokeOpacity: isDimLine ? 0.03 : 0.08,
+                      } : {}}
+                      transition={{
+                        pathLength: { duration: 0.9, delay: 0.3 + i * 0.06, ease: "easeOut" },
+                        strokeOpacity: { duration: 0.35, ease: "easeOut" },
+                      }}
                     />
+                    <motion.line
+                      x1={CENTER.x} y1={CENTER.y} x2={x} y2={y}
+                      stroke="#16A34A"
+                      strokeLinecap="round"
+                      filter="url(#lineGlow)"
+                      initial={false}
+                      animate={{
+                        strokeOpacity: isHot ? 0.85 : 0,
+                        strokeWidth: isHot ? 2 : 1,
+                      }}
+                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    />
+                    {isHot && (
+                      <motion.circle
+                        r={4}
+                        fill="#16A34A"
+                        filter="url(#lineGlow)"
+                        initial={{ cx: CENTER.x, cy: CENTER.y, opacity: 0 }}
+                        animate={{ cx: [CENTER.x, x], cy: [CENTER.y, y], opacity: [0, 1, 0] }}
+                        transition={{ duration: 1.2, repeat: Infinity, ease: "easeOut" }}
+                      />
+                    )}
                     <motion.circle
                       cx={x} cy={y} r={4}
                       fill="url(#linePulse)"
-                      animate={{ opacity: [0.3, 0.9, 0.3] }}
+                      animate={{ opacity: isDimLine ? [0.1, 0.3, 0.1] : [0.3, 0.9, 0.3] }}
                       transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.2 }}
                     />
                   </g>
                 );
               })}
             </svg>
+
 
             {/* shopify center */}
             <GlassNode
