@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CheckCircle2, ArrowRight, Calendar, MessageCircle } from "lucide-react";
+import { ArrowRight, Calendar, MessageCircle } from "lucide-react";
 import { PageHero } from "@/components/site-chrome";
-import { EXPERTISE, FAQS, WHATSAPP, CALENDLY } from "@/components/site-data";
+import { FAQS, WHATSAPP, CALENDLY } from "@/components/site-data";
+import { ServicesGrid } from "@/components/services-grid";
 import { useState } from "react";
 
 export const Route = createFileRoute("/services")({
@@ -25,28 +26,8 @@ function ServicesPage() {
         title="Services Built to Grow Shopify Stores"
         sub="From new-store launches to full redesigns and ongoing growth work — pick the package that fits where you are today."
       />
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="grid gap-6 md:grid-cols-3">
-            {EXPERTISE.map((e) => (
-              <div key={e.title} className="rounded-2xl bg-card p-8 shadow-sm ring-1 ring-border">
-                <div className="mb-5 grid h-14 w-14 place-items-center rounded-xl bg-primary text-primary-foreground">
-                  <e.icon className="h-7 w-7" />
-                </div>
-                <h2 className="text-xl font-bold">{e.title}</h2>
-                <ul className="mt-4 space-y-2.5">
-                  {e.items.map((it) => (
-                    <li key={it} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-primary" />
-                      <span>{it}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServicesGrid />
+
 
       <section className="bg-surface py-16">
         <div className="mx-auto max-w-3xl px-4 md:px-6">
