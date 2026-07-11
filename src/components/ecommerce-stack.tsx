@@ -86,47 +86,90 @@ function GlassNode({
       onBlur={onLeave}
       onClick={onSelect}
       aria-label={`${p.name} — ${p.badge}`}
-      className="group absolute -translate-x-1/2 -translate-y-1/2 focus:outline-none"
-      style={{ left: cx, top: cy, width: size, height: size }}
+      aria-pressed={isActive}
+      className="group absolute -translate-x-1/2 -translate-y-1/2 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      style={{ left: cx, top: cy, width: size, height: size, willChange: "transform, opacity, filter" }}
       initial={{ opacity: 0, scale: 0.6 }}
-      animate={{ opacity: isDimmed ? 0.35 : 1, scale: 1 }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+      animate={{
+        opacity: isDimmed ? 0.28 : 1,
+        scale: isActive ? 1.12 : 1,
+        filter: isDimmed ? "saturate(0.6) blur(0.5px)" : "saturate(1) blur(0px)",
+      }}
+      transition={{
+        opacity: { duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] },
+        scale: { type: "spring", stiffness: 260, damping: 22, mass: 0.7 },
+        filter: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
+      }}
+      whileTap={{ scale: isActive ? 1.06 : 0.96 }}
     >
       <motion.div
         animate={{ y: [0, -8, 0, 6, 0] }}
         transition={{ duration: p.float, repeat: Infinity, ease: "easeInOut" }}
         className="relative h-full w-full"
+        style={{ willChange: "transform" }}
       >
-        {/* glow */}
-        <div
-          className="absolute inset-0 rounded-full opacity-60 blur-2xl transition-opacity duration-300 group-hover:opacity-100"
-          style={{ background: "radial-gradient(circle, rgba(22,163,74,0.35), transparent 70%)" }}
+        <motion.div
+          className="absolute inset-0 rounded-full blur-2xl"
+          initial={false}
+          animate={{ opacity: isActive ? 1 : 0.55, scale: isActive ? 1.25 : 1 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          style={{ background: "radial-gradient(circle, rgba(22,163,74,0.45), transparent 70%)" }}
         />
-        {/* glass circle */}
-        <div
-          className="relative flex h-full w-full flex-col items-center justify-center rounded-full border border-white/70 bg-white/60 backdrop-blur-xl transition-all duration-300 group-hover:border-primary/40 group-hover:bg-white/80"
-          style={{
-            boxShadow:
-              "0 1px 0 rgba(255,255,255,0.9) inset, 0 20px 40px -20px rgba(11,11,11,0.15), 0 0 0 1px rgba(22,163,74,0.08)",
+        <motion.div
+          className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-full border bg-white/60 backdrop-blur-xl"
+          initial={false}
+          animate={{
+            borderColor: isActive ? "rgba(22,163,74,0.55)" : "rgba(255,255,255,0.7)",
+            backgroundColor: isActive ? "rgba(255,255,255,0.88)" : "rgba(255,255,255,0.6)",
+            boxShadow: isActive
+              ? "0 1px 0 rgba(255,255,255,0.9) inset, 0 30px 60px -20px rgba(22,163,74,0.45), 0 0 0 1px rgba(22,163,74,0.25)"
+              : "0 1px 0 rgba(255,255,255,0.9) inset, 0 20px 40px -20px rgba(11,11,11,0.15), 0 0 0 1px rgba(22,163,74,0.08)",
           }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         >
-          {/* soft reflection */}
           <div className="pointer-events-none absolute inset-x-3 top-2 h-1/3 rounded-full bg-gradient-to-b from-white/80 to-transparent opacity-70" />
-          <div className="grid place-items-center rounded-full bg-primary-soft p-2 text-primary transition-transform duration-300 group-hover:scale-110">
+          <motion.div
+            aria-hidden
+            className="pointer-events-none absolute -inset-y-2 w-1/2 bg-gradient-to-r from-transparent via-white/70 to-transparent"
+            initial={{ x: "-120%", rotate: 12 }}
+            animate={{ x: isActive ? "220%" : "-120%" }}
+            transition={{
+              duration: isActive ? 1.2 : 0.6,
+              ease: [0.22, 1, 0.36, 1],
+              repeat: isActive ? Infinity : 0,
+              repeatDelay: 1.6,
+            }}
+          />
+          <motion.div
+            className="grid place-items-center rounded-full bg-primary-soft p-2 text-primary"
+            initial={false}
+            animate={{ scale: isActive ? 1.15 : 1, rotate: isActive ? [0, -4, 4, 0] : 0 }}
+            transition={{
+              scale: { type: "spring", stiffness: 300, damping: 18 },
+              rotate: { duration: 0.6, ease: "easeInOut" },
+            }}
+          >
             <Icon className={p.size === "lg" ? "h-8 w-8" : "h-6 w-6"} />
-          </div>
+          </motion.div>
           <div className={`mt-1.5 text-center font-semibold text-foreground ${p.size === "lg" ? "text-sm" : "text-[11px]"}`}>
             {p.name}
           </div>
-        </div>
-        {/* pulse ring on active */}
+        </motion.div>
         {isActive && (
-          <motion.div
-            className="pointer-events-none absolute inset-0 rounded-full border-2 border-primary/60"
-            initial={{ scale: 1, opacity: 0.8 }}
-            animate={{ scale: 1.25, opacity: 0 }}
-            transition={{ duration: 1.4, repeat: Infinity, ease: "easeOut" }}
-          />
+          <>
+            <motion.div
+              className="pointer-events-none absolute inset-0 rounded-full border-2 border-primary/60"
+              initial={{ scale: 1, opacity: 0.8 }}
+              animate={{ scale: 1.35, opacity: 0 }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: "easeOut" }}
+            />
+            <motion.div
+              className="pointer-events-none absolute inset-0 rounded-full border border-primary/40"
+              initial={{ scale: 1, opacity: 0.6 }}
+              animate={{ scale: 1.6, opacity: 0 }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: "easeOut", delay: 0.4 }}
+            />
+          </>
         )}
       </motion.div>
     </motion.button>
@@ -258,36 +301,73 @@ export function EcommerceStack() {
         <div className="relative mt-16 hidden md:block">
           <div className="relative mx-auto" style={{ width: W, height: H, maxWidth: "100%" }}>
             {/* connecting lines */}
-            <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 h-full w-full">
+            <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 h-full w-full overflow-visible">
               <defs>
                 <radialGradient id="linePulse" cx="50%" cy="50%" r="50%">
                   <stop offset="0%" stopColor="#16A34A" stopOpacity="0.9" />
                   <stop offset="100%" stopColor="#16A34A" stopOpacity="0" />
                 </radialGradient>
+                <filter id="lineGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="2.5" result="b" />
+                  <feMerge>
+                    <feMergeNode in="b" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
               </defs>
               {positions.map(({ p, x, y }, i) => {
-                const isHot = (hoverId ?? activeId) === p.id;
+                const current = hoverId ?? activeId;
+                const isHot = current === p.id;
+                const anyHot = !!current && current !== "shopify";
+                const isDimLine = anyHot && !isHot;
                 return (
                   <g key={p.id}>
                     <motion.line
                       x1={CENTER.x} y1={CENTER.y} x2={x} y2={y}
-                      stroke={isHot ? "#16A34A" : "#0B0B0B"}
-                      strokeOpacity={isHot ? 0.45 : 0.08}
-                      strokeWidth={isHot ? 1.25 : 1}
-                      initial={{ pathLength: 0 }}
-                      animate={inView ? { pathLength: 1 } : {}}
-                      transition={{ duration: 0.9, delay: 0.3 + i * 0.06, ease: "easeOut" }}
+                      stroke="#0B0B0B"
+                      initial={{ pathLength: 0, strokeOpacity: 0 }}
+                      animate={inView ? {
+                        pathLength: 1,
+                        strokeOpacity: isDimLine ? 0.03 : 0.08,
+                      } : {}}
+                      transition={{
+                        pathLength: { duration: 0.9, delay: 0.3 + i * 0.06, ease: "easeOut" },
+                        strokeOpacity: { duration: 0.35, ease: "easeOut" },
+                      }}
                     />
+                    <motion.line
+                      x1={CENTER.x} y1={CENTER.y} x2={x} y2={y}
+                      stroke="#16A34A"
+                      strokeLinecap="round"
+                      filter="url(#lineGlow)"
+                      initial={false}
+                      animate={{
+                        strokeOpacity: isHot ? 0.85 : 0,
+                        strokeWidth: isHot ? 2 : 1,
+                      }}
+                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    />
+                    {isHot && (
+                      <motion.circle
+                        r={4}
+                        fill="#16A34A"
+                        filter="url(#lineGlow)"
+                        initial={{ cx: CENTER.x, cy: CENTER.y, opacity: 0 }}
+                        animate={{ cx: [CENTER.x, x], cy: [CENTER.y, y], opacity: [0, 1, 0] }}
+                        transition={{ duration: 1.2, repeat: Infinity, ease: "easeOut" }}
+                      />
+                    )}
                     <motion.circle
                       cx={x} cy={y} r={4}
                       fill="url(#linePulse)"
-                      animate={{ opacity: [0.3, 0.9, 0.3] }}
+                      animate={{ opacity: isDimLine ? [0.1, 0.3, 0.1] : [0.3, 0.9, 0.3] }}
                       transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.2 }}
                     />
                   </g>
                 );
               })}
             </svg>
+
 
             {/* shopify center */}
             <GlassNode
