@@ -3,6 +3,7 @@ import { ArrowRight, Calendar, MessageCircle } from "lucide-react";
 import { PageHero } from "@/components/site-chrome";
 import { FAQS, WHATSAPP, CALENDLY } from "@/components/site-data";
 import { ServicesGrid } from "@/components/services-grid";
+import { ServicesDetailed } from "@/components/services-detailed";
 import { useState } from "react";
 
 export const Route = createFileRoute("/services")({
@@ -27,6 +28,9 @@ function ServicesPage() {
         sub="From new-store launches to full redesigns and ongoing growth work — pick the package that fits where you are today."
       />
       <ServicesGrid />
+      <ServicesDetailed />
+
+
 
 
       <section className="bg-surface py-16">
