@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CheckCircle2, ArrowRight, Calendar, MessageCircle } from "lucide-react";
+import { ArrowRight, Calendar, MessageCircle } from "lucide-react";
 import { PageHero } from "@/components/site-chrome";
-import { EXPERTISE, FAQS, WHATSAPP, CALENDLY } from "@/components/site-data";
+import { FAQS, WHATSAPP, CALENDLY } from "@/components/site-data";
+import { ServicesGrid } from "@/components/services-grid";
 import { useState } from "react";
 
 export const Route = createFileRoute("/services")({
