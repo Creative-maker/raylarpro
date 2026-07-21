@@ -84,13 +84,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "RaylarPro — Shopify Specialist & eCommerce Growth Consultant" },
-      { name: "description", content: "Yusuff Rasheed (RaylarPro) builds high-converting Shopify stores, boosts CRO, SEO and speed. Store setup, redesign, Klaviyo and app integrations." },
+      { title: "RaylarPro — Shopify Development Agency for Ambitious Brands" },
+      { name: "description", content: "RaylarPro builds high-converting Shopify stores that grow faster, sell more, and scale better. Shopify Plus, CRO, headless commerce and store optimization." },
       { name: "author", content: "RaylarPro" },
-      { property: "og:title", content: "RaylarPro — Shopify Specialist & eCommerce Growth Consultant" },
-      { property: "og:description", content: "High-converting Shopify stores designed for long-term growth." },
+      { property: "og:title", content: "RaylarPro — Shopify Development Agency for Ambitious Brands" },
+      { property: "og:description", content: "RaylarPro builds high-converting Shopify stores that grow faster, sell more, and scale better. Shopify Plus, CRO, headless commerce and store optimization." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "RaylarPro — Shopify Development Agency for Ambitious Brands" },
+      { name: "twitter:description", content: "RaylarPro builds high-converting Shopify stores that grow faster, sell more, and scale better. Shopify Plus, CRO, headless commerce and store optimization." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fec4a0f6-7f81-4bc9-b180-543a4dca15d0/id-preview-42dafd70--f8b5b33b-845f-43bb-a652-423874be2f26.lovable.app-1783735684665.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fec4a0f6-7f81-4bc9-b180-543a4dca15d0/id-preview-42dafd70--f8b5b33b-845f-43bb-a652-423874be2f26.lovable.app-1783735684665.png" },
     ],
     links: [
       {

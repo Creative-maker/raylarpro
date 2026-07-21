@@ -18,8 +18,8 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "RaylarPro — Shopify Development Agency for Ambitious Brands" },
       { name: "description", content: "RaylarPro builds high-converting Shopify stores that grow faster, sell more, and scale better. Shopify Plus, CRO, headless commerce and store optimization." },
-      { property: "og:title", content: "RaylarPro — Shopify Development Agency" },
-      { property: "og:description", content: "Premium Shopify stores designed to grow faster, sell more, and scale better." },
+      { property: "og:title", content: "RaylarPro — Shopify Development Agency for Ambitious Brands" },
+      { property: "og:description", content: "RaylarPro builds high-converting Shopify stores that grow faster, sell more, and scale better. Shopify Plus, CRO, headless commerce and store optimization." },
     ],
   }),
   component: HomePage,
