@@ -199,12 +199,13 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
         <div className="mt-auto pt-6">
           <div className="border-t border-border pt-5">
             <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-              View All Services
+              See Full Details
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </span>
           </div>
         </div>
-      </Link>
+      </a>
+
     </motion.div>
   );
 }
