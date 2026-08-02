@@ -158,10 +158,11 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
       {/* soft green glow on hover */}
       <div className="pointer-events-none absolute -inset-px rounded-[22px] bg-gradient-to-br from-primary/30 via-primary/0 to-primary/20 opacity-0 blur-xl transition duration-500 group-hover:opacity-100" />
 
-      <Link
-        to="/services"
+      <a
+        href="#service-details"
         className="relative flex h-full flex-col rounded-[20px] border border-border bg-card p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-all duration-500 group-hover:border-primary/40 group-hover:shadow-[0_20px_60px_-20px_oklch(0.66_0.19_145/0.35)]"
       >
+
         {/* icon */}
         <div className="relative">
           <motion.div
