@@ -12,6 +12,8 @@ import {
   STATS, CERTS, TESTIMONIALS, EXPERTISE, PROJECTS, WHATSAPP, CALENDLY,
 } from "@/components/site-data";
 import { EcommerceStack } from "@/components/ecommerce-stack";
+import { ServicesEditorial } from "@/components/services-editorial";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,7 +35,7 @@ function HomePage() {
       <StatsBar />
       <Certifications />
       <TestimonialsCarousel />
-      <ExpertisePreview />
+      <ServicesEditorial />
       <EcommerceStack />
       <ProjectsPreview />
       <FreeTool />
@@ -363,39 +365,6 @@ function TestimonialsCarousel() {
   );
 }
 
-function ExpertisePreview() {
-  return (
-    <section className="py-20">
-      <div className="mx-auto max-w-7xl px-4 md:px-6">
-        <SectionHeading>My Expertise</SectionHeading>
-        <SectionSub>Specialized skills to grow your e-commerce business.</SectionSub>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {EXPERTISE.map((e) => (
-            <div key={e.title} className="rounded-2xl bg-card p-8 shadow-sm ring-1 ring-border">
-              <div className="mb-5 grid h-14 w-14 place-items-center rounded-xl bg-primary text-primary-foreground">
-                <e.icon className="h-7 w-7" />
-              </div>
-              <h3 className="text-xl font-bold">{e.title}</h3>
-              <ul className="mt-4 space-y-2.5">
-                {e.items.map((it) => (
-                  <li key={it} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-primary" />
-                    <span>{it}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <div className="mt-10 text-center">
-          <Link to="/services" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
-            See all services <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function ProjectsPreview() {
   const featured = PROJECTS.slice(0, 6);
