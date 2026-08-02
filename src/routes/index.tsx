@@ -12,6 +12,8 @@ import {
   STATS, CERTS, TESTIMONIALS, EXPERTISE, PROJECTS, WHATSAPP, CALENDLY,
 } from "@/components/site-data";
 import { EcommerceStack } from "@/components/ecommerce-stack";
+import { ServicesEditorial } from "@/components/services-editorial";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,7 +35,7 @@ function HomePage() {
       <StatsBar />
       <Certifications />
       <TestimonialsCarousel />
-      <ExpertisePreview />
+      <ServicesEditorial />
       <EcommerceStack />
       <ProjectsPreview />
       <FreeTool />
