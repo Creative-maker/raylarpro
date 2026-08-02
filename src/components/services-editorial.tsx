@@ -525,17 +525,10 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
             <h3 className="mt-3 text-2xl font-black tracking-tight md:text-3xl">{service.title}</h3>
             <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{service.desc}</p>
 
-            <ul className="mt-5 flex flex-wrap gap-2">
-              {service.items.map((it) => (
-                <li
-                  key={it}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background/70 px-2.5 py-1 text-[11px] font-medium text-foreground/80 transition group-hover:border-primary/25 md:text-xs"
-                >
-                  <Check className="h-3 w-3 flex-none text-primary" strokeWidth={3} />
-                  {it}
-                </li>
-              ))}
-            </ul>
+            <div className="mt-4 text-xs font-semibold text-muted-foreground">
+              {service.items.length} services included
+            </div>
+
 
             <div className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary opacity-70 transition-opacity duration-300 group-hover:opacity-100">
               Learn More
