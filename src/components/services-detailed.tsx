@@ -158,7 +158,7 @@ const DETAILED: Detailed[] = [
 
 export function ServicesDetailed() {
   return (
-    <section className="relative overflow-hidden bg-surface py-20 md:py-28">
+    <section id="service-details" className="relative overflow-hidden bg-surface py-20 md:py-28 scroll-mt-24">
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute right-0 top-24 h-[420px] w-[520px] rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute -left-32 bottom-0 h-[380px] w-[520px] rounded-full bg-primary/10 blur-3xl" />

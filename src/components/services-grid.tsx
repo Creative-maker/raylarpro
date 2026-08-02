@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "@tanstack/react-router";
+
 import {
   Store, TrendingUp, Mail, Zap, BarChart3, Shield,
   ArrowRight, Check, type LucideIcon,
