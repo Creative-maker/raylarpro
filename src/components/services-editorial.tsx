@@ -403,14 +403,17 @@ export function ServicesEditorial() {
         <div className="mt-12 flex justify-center">
           <Link
             to="/services"
-            className="group/cta inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background transition hover:shadow-[0_18px_50px_-14px_oklch(0.66_0.19_145/0.7)]"
+            hash="service-categories"
+            aria-label="View all services on the services page"
+            className="group/cta inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background transition hover:shadow-[0_18px_50px_-14px_oklch(0.66_0.19_145/0.7)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             View All Services
             <span className="grid h-6 w-6 place-items-center rounded-full bg-primary text-primary-foreground transition-transform group-hover/cta:translate-x-0.5">
-              <ArrowRight className="h-3.5 w-3.5" />
+              <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
             </span>
           </Link>
         </div>
+
 
       </div>
     </section>
