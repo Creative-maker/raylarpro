@@ -435,8 +435,11 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
       <Link
         to="/services"
-        className="relative flex h-full flex-col rounded-[24px] border border-border bg-card/80 p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-sm transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary group-hover:-translate-y-1.5 group-hover:border-primary/40 group-hover:shadow-[0_28px_70px_-30px_oklch(0.66_0.19_145/0.45)] md:p-8"
+        hash={service.slug}
+        aria-label={`Learn more about ${service.title}`}
+        className="relative flex h-full flex-col rounded-[24px] border border-border bg-card/80 p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-sm transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:-translate-y-1.5 focus-visible:border-primary/40 group-hover:-translate-y-1.5 group-hover:border-primary/40 group-hover:shadow-[0_28px_70px_-30px_oklch(0.66_0.19_145/0.45)] md:p-8"
       >
+
         <div className={split ? "grid gap-6 md:grid-cols-2 md:items-center" : "flex h-full flex-col"}>
           <div className={split ? "order-2 md:order-1" : ""}>
             <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary">
