@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import type { ReactNode } from "react";
+import { SERVICE_CATEGORIES } from "@/components/services-catalog";
+
 
 /* ------------------------------------------------------------------ */
 /* Miniature SaaS UI illustrations (pure CSS/SVG — no image payload)   */
@@ -322,6 +324,7 @@ function ArtStrategy() {
 /* ------------------------------------------------------------------ */
 
 type Service = {
+  slug: string;
   label: string;
   title: string;
   desc: string;
@@ -332,120 +335,21 @@ type Service = {
   layout: "stack" | "split";
 };
 
-const SERVICES: Service[] = [
-  {
-    label: "01 — Build",
-    title: "Shopify Development",
-    desc: "Build fast, scalable Shopify stores designed for growth.",
-    items: [
-      "Shopify Store Setup",
-      "Custom Theme Development",
-      "Shopify Plus",
-      "Store Migration",
-      "Headless Commerce",
-      "App Development",
-    ],
-    art: ArtStorefront,
-    span: "lg:col-span-7 lg:row-span-2",
-    layout: "stack",
-  },
-  {
-    label: "02 — Convert",
-    title: "Store Optimization & CRO",
-    desc: "Increase conversions and maximize revenue from your existing traffic.",
-    items: [
-      "Conversion Rate Optimization",
-      "Speed Optimization",
-      "Checkout Optimization",
-      "Product Page Optimization",
-      "UX Improvements",
-      "eCommerce Audits",
-    ],
-    art: ArtAnalytics,
-    span: "lg:col-span-5",
-    layout: "stack",
-  },
-  {
-    label: "03 — Discover",
-    title: "SEO & AI Search Optimization",
-    desc: "Help customers discover your store through organic and AI-powered search.",
-    items: [
-      "Technical SEO",
-      "Shopify SEO",
-      "On-Page SEO",
-      "GEO (Generative Engine Optimization)",
-      "AI Search Optimization",
-      "Structured Data",
-    ],
-    art: ArtSeo,
-    span: "lg:col-span-5",
-    layout: "stack",
-  },
-  {
-    label: "04 — Acquire",
-    title: "Search Engine Marketing (SEM) & Paid Growth",
-    desc: "Drive qualified traffic through high-performing paid advertising campaigns.",
-    items: [
-      "Google Ads",
-      "Google Shopping",
-      "Performance Max",
-      "Search Campaigns",
-      "Remarketing",
-      "Landing Page Optimization",
-    ],
-    art: ArtAds,
-    span: "lg:col-span-6",
-    layout: "split",
-  },
-  {
-    label: "05 — Retain",
-    title: "Email & SMS Marketing",
-    desc: "Turn one-time buyers into loyal repeat customers.",
-    items: [
-      "Klaviyo Automation",
-      "Email Campaigns",
-      "SMS Marketing",
-      "Customer Segmentation",
-      "Abandoned Cart Recovery",
-      "Post-Purchase Flows",
-    ],
-    art: ArtFlow,
-    span: "lg:col-span-6",
-    layout: "split",
-  },
-  {
-    label: "06 — Automate",
-    title: "Integrations & AI Automation",
-    desc: "Connect your tools and automate repetitive tasks to scale efficiently.",
-    items: [
-      "Shopify Flow",
-      "API Integrations",
-      "AI Automation",
-      "CRM & ERP Integrations",
-      "Inventory Sync",
-      "Google Analytics 4",
-    ],
-    art: ArtAutomation,
-    span: "lg:col-span-5",
-    layout: "stack",
-  },
-  {
-    label: "07 — Scale",
-    title: "Shopify Growth Consultancy",
-    desc: "Strategic guidance to help your business grow with confidence.",
-    items: [
-      "Shopify Consultancy",
-      "Growth Strategy",
-      "Store Audits",
-      "Internationalisation",
-      "Performance Reviews",
-      "Ongoing Support",
-    ],
-    art: ArtStrategy,
-    span: "lg:col-span-7",
-    layout: "split",
-  },
-];
+const PRESENTATION: Record<string, { art: () => ReactNode; span: string; layout: "stack" | "split" }> = {
+  "shopify-development": { art: ArtStorefront, span: "lg:col-span-7 lg:row-span-2", layout: "stack" },
+  "store-optimization-cro": { art: ArtAnalytics, span: "lg:col-span-5", layout: "stack" },
+  "seo-ai-search": { art: ArtSeo, span: "lg:col-span-5", layout: "stack" },
+  "sem-paid-growth": { art: ArtAds, span: "lg:col-span-6", layout: "split" },
+  "email-sms-marketing": { art: ArtFlow, span: "lg:col-span-6", layout: "split" },
+  "integrations-ai-automation": { art: ArtAutomation, span: "lg:col-span-5", layout: "stack" },
+  "growth-consultancy": { art: ArtStrategy, span: "lg:col-span-7", layout: "split" },
+};
+
+const SERVICES: Service[] = SERVICE_CATEGORIES.map((c) => ({
+  ...c,
+  ...PRESENTATION[c.slug]!,
+}));
+
 
 export function ServicesEditorial() {
   return (
@@ -499,14 +403,17 @@ export function ServicesEditorial() {
         <div className="mt-12 flex justify-center">
           <Link
             to="/services"
-            className="group/cta inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background transition hover:shadow-[0_18px_50px_-14px_oklch(0.66_0.19_145/0.7)]"
+            hash="service-categories"
+            aria-label="View all services on the services page"
+            className="group/cta inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background transition hover:shadow-[0_18px_50px_-14px_oklch(0.66_0.19_145/0.7)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             View All Services
             <span className="grid h-6 w-6 place-items-center rounded-full bg-primary text-primary-foreground transition-transform group-hover/cta:translate-x-0.5">
-              <ArrowRight className="h-3.5 w-3.5" />
+              <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
             </span>
           </Link>
         </div>
+
 
       </div>
     </section>
@@ -528,8 +435,11 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
       <Link
         to="/services"
-        className="relative flex h-full flex-col rounded-[24px] border border-border bg-card/80 p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-sm transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary group-hover:-translate-y-1.5 group-hover:border-primary/40 group-hover:shadow-[0_28px_70px_-30px_oklch(0.66_0.19_145/0.45)] md:p-8"
+        hash={service.slug}
+        aria-label={`Learn more about ${service.title}`}
+        className="relative flex h-full flex-col rounded-[24px] border border-border bg-card/80 p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-sm transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:-translate-y-1.5 focus-visible:border-primary/40 group-hover:-translate-y-1.5 group-hover:border-primary/40 group-hover:shadow-[0_28px_70px_-30px_oklch(0.66_0.19_145/0.45)] md:p-8"
       >
+
         <div className={split ? "grid gap-6 md:grid-cols-2 md:items-center" : "flex h-full flex-col"}>
           <div className={split ? "order-2 md:order-1" : ""}>
             <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary">
@@ -543,10 +453,11 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
             </div>
 
 
-            <div className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary opacity-70 transition-opacity duration-300 group-hover:opacity-100">
+            <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary opacity-70 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100">
               Learn More
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </div>
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+            </span>
+
           </div>
 
           <div
