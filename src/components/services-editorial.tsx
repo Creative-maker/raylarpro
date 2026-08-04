@@ -453,10 +453,11 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
             </div>
 
 
-            <div className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary opacity-70 transition-opacity duration-300 group-hover:opacity-100">
+            <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary opacity-70 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100">
               Learn More
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </div>
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+            </span>
+
           </div>
 
           <div
