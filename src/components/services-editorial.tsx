@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import type { ReactNode } from "react";
+import { SERVICE_CATEGORIES } from "@/components/services-catalog";
+
 
 /* ------------------------------------------------------------------ */
 /* Miniature SaaS UI illustrations (pure CSS/SVG — no image payload)   */
