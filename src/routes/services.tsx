@@ -30,7 +30,9 @@ function ServicesPage() {
         sub="From new-store launches to full redesigns and ongoing growth work — pick the package that fits where you are today."
       />
       <ServicesGrid />
+      <ServicesAccordion />
       <ServicesDetailed />
+
 
 
 
