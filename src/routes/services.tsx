@@ -4,6 +4,8 @@ import { PageHero } from "@/components/site-chrome";
 import { FAQS, WHATSAPP, CALENDLY } from "@/components/site-data";
 import { ServicesGrid } from "@/components/services-grid";
 import { ServicesDetailed } from "@/components/services-detailed";
+import { ServicesAccordion } from "@/components/services-accordion";
+
 import { useState } from "react";
 
 export const Route = createFileRoute("/services")({
