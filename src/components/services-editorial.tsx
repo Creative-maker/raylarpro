@@ -322,6 +322,7 @@ function ArtStrategy() {
 /* ------------------------------------------------------------------ */
 
 type Service = {
+  slug: string;
   label: string;
   title: string;
   desc: string;
@@ -332,120 +333,21 @@ type Service = {
   layout: "stack" | "split";
 };
 
-const SERVICES: Service[] = [
-  {
-    label: "01 — Build",
-    title: "Shopify Development",
-    desc: "Build fast, scalable Shopify stores designed for growth.",
-    items: [
-      "Shopify Store Setup",
-      "Custom Theme Development",
-      "Shopify Plus",
-      "Store Migration",
-      "Headless Commerce",
-      "App Development",
-    ],
-    art: ArtStorefront,
-    span: "lg:col-span-7 lg:row-span-2",
-    layout: "stack",
-  },
-  {
-    label: "02 — Convert",
-    title: "Store Optimization & CRO",
-    desc: "Increase conversions and maximize revenue from your existing traffic.",
-    items: [
-      "Conversion Rate Optimization",
-      "Speed Optimization",
-      "Checkout Optimization",
-      "Product Page Optimization",
-      "UX Improvements",
-      "eCommerce Audits",
-    ],
-    art: ArtAnalytics,
-    span: "lg:col-span-5",
-    layout: "stack",
-  },
-  {
-    label: "03 — Discover",
-    title: "SEO & AI Search Optimization",
-    desc: "Help customers discover your store through organic and AI-powered search.",
-    items: [
-      "Technical SEO",
-      "Shopify SEO",
-      "On-Page SEO",
-      "GEO (Generative Engine Optimization)",
-      "AI Search Optimization",
-      "Structured Data",
-    ],
-    art: ArtSeo,
-    span: "lg:col-span-5",
-    layout: "stack",
-  },
-  {
-    label: "04 — Acquire",
-    title: "Search Engine Marketing (SEM) & Paid Growth",
-    desc: "Drive qualified traffic through high-performing paid advertising campaigns.",
-    items: [
-      "Google Ads",
-      "Google Shopping",
-      "Performance Max",
-      "Search Campaigns",
-      "Remarketing",
-      "Landing Page Optimization",
-    ],
-    art: ArtAds,
-    span: "lg:col-span-6",
-    layout: "split",
-  },
-  {
-    label: "05 — Retain",
-    title: "Email & SMS Marketing",
-    desc: "Turn one-time buyers into loyal repeat customers.",
-    items: [
-      "Klaviyo Automation",
-      "Email Campaigns",
-      "SMS Marketing",
-      "Customer Segmentation",
-      "Abandoned Cart Recovery",
-      "Post-Purchase Flows",
-    ],
-    art: ArtFlow,
-    span: "lg:col-span-6",
-    layout: "split",
-  },
-  {
-    label: "06 — Automate",
-    title: "Integrations & AI Automation",
-    desc: "Connect your tools and automate repetitive tasks to scale efficiently.",
-    items: [
-      "Shopify Flow",
-      "API Integrations",
-      "AI Automation",
-      "CRM & ERP Integrations",
-      "Inventory Sync",
-      "Google Analytics 4",
-    ],
-    art: ArtAutomation,
-    span: "lg:col-span-5",
-    layout: "stack",
-  },
-  {
-    label: "07 — Scale",
-    title: "Shopify Growth Consultancy",
-    desc: "Strategic guidance to help your business grow with confidence.",
-    items: [
-      "Shopify Consultancy",
-      "Growth Strategy",
-      "Store Audits",
-      "Internationalisation",
-      "Performance Reviews",
-      "Ongoing Support",
-    ],
-    art: ArtStrategy,
-    span: "lg:col-span-7",
-    layout: "split",
-  },
-];
+const PRESENTATION: Record<string, { art: () => ReactNode; span: string; layout: "stack" | "split" }> = {
+  "shopify-development": { art: ArtStorefront, span: "lg:col-span-7 lg:row-span-2", layout: "stack" },
+  "store-optimization-cro": { art: ArtAnalytics, span: "lg:col-span-5", layout: "stack" },
+  "seo-ai-search": { art: ArtSeo, span: "lg:col-span-5", layout: "stack" },
+  "sem-paid-growth": { art: ArtAds, span: "lg:col-span-6", layout: "split" },
+  "email-sms-marketing": { art: ArtFlow, span: "lg:col-span-6", layout: "split" },
+  "integrations-ai-automation": { art: ArtAutomation, span: "lg:col-span-5", layout: "stack" },
+  "growth-consultancy": { art: ArtStrategy, span: "lg:col-span-7", layout: "split" },
+};
+
+const SERVICES: Service[] = SERVICE_CATEGORIES.map((c) => ({
+  ...c,
+  ...PRESENTATION[c.slug]!,
+}));
+
 
 export function ServicesEditorial() {
   return (
