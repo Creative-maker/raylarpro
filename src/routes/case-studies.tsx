@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Star } from "lucide-react";
 import { PageHero } from "@/components/site-chrome";
 import { PROJECTS, REVIEWS } from "@/components/site-data";
+import { StoreThumb } from "@/components/store-thumb";
+
 
 export const Route = createFileRoute("/case-studies")({
   head: () => ({
