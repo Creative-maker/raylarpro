@@ -13,6 +13,8 @@ import {
 } from "@/components/site-data";
 import { EcommerceStack } from "@/components/ecommerce-stack";
 import { ServicesEditorial } from "@/components/services-editorial";
+import { StoreThumb } from "@/components/store-thumb";
+
 
 
 export const Route = createFileRoute("/")({
