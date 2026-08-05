@@ -1,6 +1,6 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Check, ExternalLink, Quote, TrendingUp } from "lucide-react";
-import { CASE_STUDIES, getCaseStudy } from "@/components/case-study-data";
+import { CASE_STUDIES, getCaseStudy, type CaseStudy } from "@/components/case-study-data";
 import { StoreThumb } from "@/components/store-thumb";
 import { CALENDLY } from "@/components/site-data";
 
@@ -44,7 +44,7 @@ function CaseStudyMissing() {
 }
 
 function CaseStudyPage() {
-  const { study: s } = Route.useLoaderData();
+  const { study: s } = Route.useLoaderData() as { study: CaseStudy };
   const others = CASE_STUDIES.filter((c) => c.slug !== s.slug).slice(0, 6);
 
   return (
