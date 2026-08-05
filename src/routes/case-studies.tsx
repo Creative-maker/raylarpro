@@ -28,9 +28,8 @@ function CaseStudiesPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {PROJECTS.map((p) => (
               <a key={p.title} href={p.url} target="_blank" rel="noreferrer" className="group overflow-hidden rounded-2xl bg-card ring-1 ring-border transition hover:-translate-y-1 hover:shadow-xl">
-                <div className="aspect-[4/3] overflow-hidden bg-muted">
-                  <img src={p.img} alt={`${p.title} website screenshot`} loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-                </div>
+                <StoreThumb url={p.url} title={p.title} img={p.img} />
+
                 <div className="p-5">
                   <div className="mb-2 inline-flex rounded-full bg-primary-soft px-2.5 py-0.5 text-xs font-semibold text-accent-foreground">{p.tag}</div>
                   <h2 className="text-lg font-bold">{p.title}</h2>
