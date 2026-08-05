@@ -13,6 +13,7 @@ import {
 } from "@/components/site-data";
 import { EcommerceStack } from "@/components/ecommerce-stack";
 import { ServicesEditorial } from "@/components/services-editorial";
+import { CASE_STUDIES } from "@/components/case-study-data";
 import { StoreThumb } from "@/components/store-thumb";
 
 
@@ -376,16 +377,19 @@ function ProjectsPreview() {
         <SectionHeading>Featured Case Studies</SectionHeading>
         <SectionSub>A snapshot of stores I have built and grown for clients.</SectionSub>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((p) => (
-            <a key={p.title} href={p.url} target="_blank" rel="noreferrer" className="group overflow-hidden rounded-2xl bg-card ring-1 ring-border transition hover:-translate-y-1 hover:shadow-xl">
+          {featured.map((p, i) => (
+            <Link key={p.url} to="/case-studies/$slug" params={{ slug: CASE_STUDIES[i]!.slug }} className="group overflow-hidden rounded-2xl bg-card ring-1 ring-border transition hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
               <StoreThumb url={p.url} title={p.title} img={p.img} />
 
               <div className="p-5">
                 <div className="mb-2 inline-flex rounded-full bg-primary-soft px-2.5 py-0.5 text-xs font-semibold text-accent-foreground">{p.tag}</div>
                 <h3 className="text-lg font-bold">{p.title}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                  Read case study <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                </span>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
         <div className="mt-10 text-center">
