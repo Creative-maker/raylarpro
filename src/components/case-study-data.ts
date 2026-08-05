@@ -260,7 +260,7 @@ function buildCaseStudy(p: (typeof PROJECTS)[number]): CaseStudy {
       `This is the full report of that engagement: where the store started, what was holding it back, exactly what was built, and what changed afterwards. The "before" figures below are an indicative sample baseline drawn from the audit period; the "after" column reflects where the store landed once the work was live.`,
     ],
     meet: [
-      `${p.title} is a ${industry.toLowerCase()} retailer trading from ${country} at ${p.host ?? p.url}. The brand has been selling since ${founded} and reached me with a catalogue that had outgrown the storefront around it.`,
+      `${p.title} is a ${industry.toLowerCase()} retailer trading from ${country} at ${p.url.replace(/^https?:\/\//, "")}. The brand has been selling since ${founded} and reached me with a catalogue that had outgrown the storefront around it.`,
       `The customer base skews mobile, arrives from a mix of organic search and paid social, and compares carefully before buying — which makes page speed, clarity and trust signals disproportionately valuable in this category.`,
     ],
     challengeIntro: `The audit surfaced five issues that between them explained most of the lost revenue. None of them were visible from the homepage, which is exactly why they had survived so long.`,
