@@ -15,6 +15,7 @@ import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies.index'
 import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
@@ -48,6 +49,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CaseStudiesIndexRoute = CaseStudiesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CaseStudiesRoute,
+} as any)
 const CaseStudiesSlugRoute = CaseStudiesSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -68,16 +74,17 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
+  '/case-studies/': typeof CaseStudiesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
-  '/case-studies': typeof CaseStudiesRouteWithChildren
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
+  '/case-studies': typeof CaseStudiesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -89,6 +96,7 @@ export interface FileRoutesById {
   '/services': typeof ServicesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
+  '/case-studies/': typeof CaseStudiesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,16 +109,17 @@ export interface FileRouteTypes {
     | '/services'
     | '/blog/$slug'
     | '/case-studies/$slug'
+    | '/case-studies/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/blog'
-    | '/case-studies'
     | '/contact'
     | '/services'
     | '/blog/$slug'
     | '/case-studies/$slug'
+    | '/case-studies'
   id:
     | '__root__'
     | '/'
@@ -121,6 +130,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/blog/$slug'
     | '/case-studies/$slug'
+    | '/case-studies/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -176,6 +186,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/case-studies/': {
+      id: '/case-studies/'
+      path: '/'
+      fullPath: '/case-studies/'
+      preLoaderRoute: typeof CaseStudiesIndexRouteImport
+      parentRoute: typeof CaseStudiesRoute
+    }
     '/case-studies/$slug': {
       id: '/case-studies/$slug'
       path: '/$slug'
@@ -205,10 +222,12 @@ const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 interface CaseStudiesRouteChildren {
   CaseStudiesSlugRoute: typeof CaseStudiesSlugRoute
+  CaseStudiesIndexRoute: typeof CaseStudiesIndexRoute
 }
 
 const CaseStudiesRouteChildren: CaseStudiesRouteChildren = {
   CaseStudiesSlugRoute: CaseStudiesSlugRoute,
+  CaseStudiesIndexRoute: CaseStudiesIndexRoute,
 }
 
 const CaseStudiesRouteWithChildren = CaseStudiesRoute._addFileChildren(
@@ -226,13 +245,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
