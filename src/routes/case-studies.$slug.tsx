@@ -2,6 +2,7 @@ import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Check, ExternalLink, Quote, TrendingUp } from "lucide-react";
 import { CASE_STUDIES, getCaseStudy, type CaseStudy } from "@/components/case-study-data";
 import { StoreThumb } from "@/components/store-thumb";
+import { CaseStudyChart } from "@/components/case-study-chart";
 import { CALENDLY } from "@/components/site-data";
 
 export const Route = createFileRoute("/case-studies/$slug")({
@@ -125,7 +126,9 @@ function CaseStudyPage() {
                 </tbody>
               </table>
             </div>
+            <CaseStudyChart metrics={s.metrics} />
           </Section>
+
 
           <Section title="The challenge">
             <p className="mt-4 text-[15px] leading-8 text-foreground/85">{s.challengeIntro}</p>

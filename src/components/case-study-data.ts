@@ -20,6 +20,13 @@ export type Metric = {
   after: string;
   delta: string;
   good: boolean;
+  /** Raw numeric values for charting. */
+  beforeNum: number;
+  afterNum: number;
+  /** Unit suffix/prefix used when formatting chart tooltips. */
+  unit: string;
+  /** true when a lower number is the better outcome (LCP, abandonment). */
+  lowerIsBetter: boolean;
 };
 
 export type CaseStudy = {
@@ -205,12 +212,12 @@ function buildMetrics(r: () => number, industry: string): Metric[] {
   const pct = (a: number, b: number) => `${a > b ? "+" : ""}${Math.round(((a - b) / b) * 100)}%`;
 
   return [
-    { label: "Conversion rate", before: `${crBefore.toFixed(2)}%`, after: `${crAfter.toFixed(2)}%`, delta: pct(crAfter, crBefore), good: true },
-    { label: "Mobile LCP", before: `${lcpBefore.toFixed(1)}s`, after: `${lcpAfter.toFixed(1)}s`, delta: `${Math.round(((lcpAfter - lcpBefore) / lcpBefore) * 100)}%`, good: true },
-    { label: "Average order value", before: `${cur}${aovBefore}`, after: `${cur}${aovAfter}`, delta: pct(aovAfter, aovBefore), good: true },
-    { label: "Cart abandonment", before: `${cartBefore.toFixed(0)}%`, after: `${cartAfter.toFixed(0)}%`, delta: `${Math.round(cartAfter - cartBefore)} pts`, good: true },
-    { label: "Organic sessions / mo", before: orgBefore.toLocaleString(), after: orgAfter.toLocaleString(), delta: pct(orgAfter, orgBefore), good: true },
-    { label: "Blended ROAS", before: `${roasBefore.toFixed(1)}x`, after: `${roasAfter.toFixed(1)}x`, delta: pct(roasAfter, roasBefore), good: true },
+    { label: "Conversion rate", before: `${crBefore.toFixed(2)}%`, after: `${crAfter.toFixed(2)}%`, delta: pct(crAfter, crBefore), good: true, beforeNum: +crBefore.toFixed(2), afterNum: +crAfter.toFixed(2), unit: "%", lowerIsBetter: false },
+    { label: "Mobile LCP", before: `${lcpBefore.toFixed(1)}s`, after: `${lcpAfter.toFixed(1)}s`, delta: `${Math.round(((lcpAfter - lcpBefore) / lcpBefore) * 100)}%`, good: true, beforeNum: +lcpBefore.toFixed(1), afterNum: +lcpAfter.toFixed(1), unit: "s", lowerIsBetter: true },
+    { label: "Average order value", before: `${cur}${aovBefore}`, after: `${cur}${aovAfter}`, delta: pct(aovAfter, aovBefore), good: true, beforeNum: aovBefore, afterNum: aovAfter, unit: cur, lowerIsBetter: false },
+    { label: "Cart abandonment", before: `${cartBefore.toFixed(0)}%`, after: `${cartAfter.toFixed(0)}%`, delta: `${Math.round(cartAfter - cartBefore)} pts`, good: true, beforeNum: +cartBefore.toFixed(0), afterNum: +cartAfter.toFixed(0), unit: "%", lowerIsBetter: true },
+    { label: "Organic sessions / mo", before: orgBefore.toLocaleString(), after: orgAfter.toLocaleString(), delta: pct(orgAfter, orgBefore), good: true, beforeNum: orgBefore, afterNum: orgAfter, unit: "", lowerIsBetter: false },
+    { label: "Blended ROAS", before: `${roasBefore.toFixed(1)}x`, after: `${roasAfter.toFixed(1)}x`, delta: pct(roasAfter, roasBefore), good: true, beforeNum: +roasBefore.toFixed(1), afterNum: +roasAfter.toFixed(1), unit: "x", lowerIsBetter: false },
   ];
 }
 
