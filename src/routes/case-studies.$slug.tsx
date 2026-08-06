@@ -126,7 +126,9 @@ function CaseStudyPage() {
                 </tbody>
               </table>
             </div>
+            <CaseStudyChart metrics={s.metrics} />
           </Section>
+
 
           <Section title="The challenge">
             <p className="mt-4 text-[15px] leading-8 text-foreground/85">{s.challengeIntro}</p>
