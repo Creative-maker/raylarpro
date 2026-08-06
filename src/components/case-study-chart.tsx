@@ -58,7 +58,7 @@ export function CaseStudyChart({ metrics }: { metrics: Metric[] }) {
           <ResponsiveContainer width="100%" height="100%">
             {active === "__all" ? (
               <BarChart data={overviewData} margin={{ top: 8, right: 12, left: 0, bottom: 8 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" vertical={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" vertical={false} />
                 <XAxis
                   dataKey="name"
                   tick={{ fontSize: 11 }}
@@ -76,7 +76,7 @@ export function CaseStudyChart({ metrics }: { metrics: Metric[] }) {
                   tickFormatter={(v: number) => `${v}%`}
                 />
                 <Tooltip
-                  cursor={{ fill: "hsl(var(--muted) / 0.35)" }}
+                  cursor={{ fill: "color-mix(in oklab, var(--muted-foreground) 12%, transparent)" }}
                   content={({ active: on, payload }) => {
                     if (!on || !payload?.length) return null;
                     const d = payload[0]!.payload as { name: string; value: number; metric: Metric };
@@ -93,7 +93,7 @@ export function CaseStudyChart({ metrics }: { metrics: Metric[] }) {
                   {overviewData.map((d) => (
                     <Cell
                       key={d.name}
-                      fill={d.value >= 0 ? "hsl(var(--primary))" : "hsl(var(--destructive))"}
+                      fill={d.value >= 0 ? "var(--primary)" : "var(--destructive)"}
                     />
                   ))}
                   <LabelList
@@ -107,7 +107,7 @@ export function CaseStudyChart({ metrics }: { metrics: Metric[] }) {
               </BarChart>
             ) : (
               <BarChart data={detailData} margin={{ top: 8, right: 12, left: 0, bottom: 8 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" vertical={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" vertical={false} />
                 <XAxis dataKey="name" tick={{ fontSize: 12 }} stroke="currentColor" className="text-muted-foreground" />
                 <YAxis
                   tick={{ fontSize: 11 }}
@@ -131,7 +131,7 @@ export function CaseStudyChart({ metrics }: { metrics: Metric[] }) {
                   )}
                 />
                 <Tooltip
-                  cursor={{ fill: "hsl(var(--muted) / 0.35)" }}
+                  cursor={{ fill: "color-mix(in oklab, var(--muted-foreground) 12%, transparent)" }}
                   content={({ active: on, payload }) => {
                     if (!on || !payload?.length || !current) return null;
                     const d = payload[0]!.payload as { name: string; value: number };
@@ -144,7 +144,7 @@ export function CaseStudyChart({ metrics }: { metrics: Metric[] }) {
                 />
                 <Bar dataKey="value" radius={[6, 6, 0, 0]} maxBarSize={110}>
                   {detailData.map((d) => (
-                    <Cell key={d.key} fill={d.key === "after" ? "hsl(var(--primary))" : "hsl(var(--muted-foreground) / 0.45)"} />
+                    <Cell key={d.key} fill={d.key === "after" ? "var(--primary)" : "color-mix(in oklab, var(--muted-foreground) 45%, transparent)"} />
                   ))}
                   <LabelList
                     dataKey="value"
