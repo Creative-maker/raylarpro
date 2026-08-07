@@ -6,7 +6,8 @@ import {
   MessageCircle, Quote, Sparkles, Star,
 } from "lucide-react";
 import { CALENDLY } from "@/components/site-data";
-import { getServicePage, relatedServices, SERVICE_PAGES } from "@/components/service-page-data";
+import type { ServicePage } from "@/components/service-page-data";
+import { getServicePage, relatedServices } from "@/components/service-page-data";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
@@ -49,7 +50,7 @@ function ServiceNotFound() {
 }
 
 function ServiceDetailPage() {
-  const { service } = Route.useLoaderData();
+  const { service } = Route.useLoaderData() as { service: ServicePage };
   const related = relatedServices(service.slug);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
@@ -289,5 +290,3 @@ function ServiceDetailPage() {
     </>
   );
 }
-
-export { SERVICE_PAGES };
