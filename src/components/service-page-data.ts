@@ -224,7 +224,7 @@ function buildServicePage(name: string, category: (typeof SERVICE_CATEGORIES)[nu
     badge: "Recognised Shopify Partner",
     heroTitle: `${pick(HERO_VERBS, seed)} Your Store With ${clean}`,
     heroSub: pick(HERO_SUBS, seed, 1),
-    whatWeDoTitle: `Shopify ${clean} That Performs, Converts and Sells`,
+    whatWeDoTitle: `${/^shopify/i.test(clean) ? clean : `Shopify ${clean}`} That Performs, Converts and Sells`,
     whatWeDoBody: `${category.desc} ${clean} is where that starts. Launching or changing a Shopify store is only the beginning — what matters is keeping it optimised for performance, conversion and sustainable growth. I handle both sides: a solid build, then the updates, apps and operations that keep it fast, functional and profitable.`,
     pillars: uniquePillars.length === 4 ? uniquePillars : pillars,
     processTitle: `How ${clean} Is Delivered for Long-Term Success`,

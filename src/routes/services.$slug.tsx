@@ -20,7 +20,7 @@ export const Route = createFileRoute("/services/$slug")({
       return { meta: [{ title: "Service not found — RaylarPro" }, { name: "robots", content: "noindex" }] };
     }
     const s = loaderData.service;
-    const title = `${s.name} — Shopify ${s.categoryTitle} | RaylarPro`;
+    const title = `${s.name} — ${s.categoryTitle} | RaylarPro`;
     const desc = s.heroSub.slice(0, 155);
     return {
       meta: [
