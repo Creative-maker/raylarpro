@@ -107,14 +107,18 @@ export function ServicesAccordion() {
                         </p>
                         <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
                           {c.items.map((it) => (
-                            <li
-                              key={it}
-                              className="flex items-start gap-2.5 text-sm text-foreground/85"
-                            >
-                              <span className="mt-0.5 grid h-4 w-4 flex-none place-items-center rounded-full bg-primary-soft text-primary">
-                                <Check className="h-3 w-3" strokeWidth={3} />
-                              </span>
-                              <span>{it}</span>
+                            <li key={it}>
+                              <Link
+                                to="/services/$slug"
+                                params={{ slug: slugify(it) }}
+                                className="group flex items-start gap-2.5 rounded-lg px-2 py-1.5 text-sm text-foreground/85 transition hover:bg-primary-soft/50 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                              >
+                                <span className="mt-0.5 grid h-4 w-4 flex-none place-items-center rounded-full bg-primary-soft text-primary">
+                                  <Check className="h-3 w-3" strokeWidth={3} />
+                                </span>
+                                <span className="flex-1">{it}</span>
+                                <ArrowRight className="mt-0.5 h-3.5 w-3.5 flex-none text-primary opacity-0 transition group-hover:translate-x-0.5 group-hover:opacity-100" aria-hidden="true" />
+                              </Link>
                             </li>
                           ))}
                         </ul>
