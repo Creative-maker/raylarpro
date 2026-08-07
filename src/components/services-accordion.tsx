@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, Check, ArrowRight } from "lucide-react";
 import { SERVICE_CATEGORIES } from "@/components/services-catalog";
+import { slugify } from "@/components/service-page-data";
 
 export function ServicesAccordion() {
   const [open, setOpen] = useState<string | null>(SERVICE_CATEGORIES[0]!.slug);
