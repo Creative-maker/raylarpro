@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight, Linkedin, Github, Twitter, Dribbble, Mail } from "lucide-react";
 import { CALENDLY, NAV } from "./site-data";
+import { FooterFaq } from "./footer-faq";
 
 const SKILLS = [
   "Shopify Development", "Shopify Plus", "Shopify Apps", "Theme Customization",
@@ -115,6 +116,8 @@ export function PremiumFooter() {
           </a>
         </motion.div>
       </section>
+
+      <FooterFaq />
 
       {/* Main footer grid */}
       <section className="relative py-16">
