@@ -4,6 +4,11 @@ import { motion } from "framer-motion";
 import { ArrowRight, Linkedin, Github, Twitter, Dribbble, Mail } from "lucide-react";
 import { CALENDLY, NAV } from "./site-data";
 import { FooterFaq } from "./footer-faq";
+import { SERVICE_PAGES } from "./service-page-data";
+
+const FOOTER_SERVICES = SERVICE_PAGES.filter((s) =>
+  ["shopify-store-setup", "custom-theme-development", "conversion-rate-optimization", "speed-optimization", "technical-seo", "klaviyo-automation", "store-migration"].includes(s.slug),
+);
 
 const SKILLS = [
   "Shopify Development", "Shopify Plus", "Shopify Apps", "Theme Customization",
@@ -49,10 +54,7 @@ const SOCIALS = [
   { icon: Mail, href: "mailto:raylarpro@gmail.com", label: "Email" },
 ];
 
-const SERVICES = [
-  "Shopify Store Design", "Shopify Development", "Store Redesign",
-  "Performance Optimization", "Migration", "Maintenance", "Shopify Apps",
-];
+const SERVICES = FOOTER_SERVICES;
 
 export function PremiumFooter() {
   const [email, setEmail] = useState("");
@@ -170,13 +172,14 @@ export function PremiumFooter() {
             <h3 className="text-xs font-bold uppercase tracking-widest text-black/50">Services</h3>
             <ul className="mt-5 space-y-3">
               {SERVICES.map((s) => (
-                <li key={s}>
+                <li key={s.slug}>
                   <Link
-                    to="/services"
+                    to="/services/$slug"
+                    params={{ slug: s.slug }}
                     className="group inline-flex text-sm font-medium text-black/70 transition-colors hover:text-[#16A34A]"
                   >
                     <span className="relative">
-                      {s}
+                      {s.name}
                       <span className="absolute -bottom-0.5 left-0 h-0.5 w-0 rounded-full bg-[#16A34A] transition-all duration-300 group-hover:w-full" />
                     </span>
                   </Link>
