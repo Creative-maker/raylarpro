@@ -81,15 +81,15 @@ function ServiceDetailPage() {
             {service.heroSub}
           </motion.p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <Link
-              to="/contact"
+            <a
+              href="#audit-form"
               className="group inline-flex items-center gap-2 rounded-full bg-foreground py-3 pl-6 pr-3 text-sm font-semibold text-background transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               Get A Free Store Audit
               <span className="grid h-8 w-8 place-items-center rounded-full bg-primary text-primary-foreground transition-transform group-hover:translate-x-0.5">
                 <ArrowUpRight className="h-4 w-4" />
               </span>
-            </Link>
+            </a>
             <a
               href={CALENDLY} target="_blank" rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border-2 border-primary bg-background px-6 py-3 text-sm font-semibold text-primary transition hover:bg-primary-soft"
