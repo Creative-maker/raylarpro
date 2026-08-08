@@ -47,6 +47,57 @@ export type Database = {
         }
         Relationships: []
       }
+      store_audits: {
+        Row: {
+          conversion_score: number
+          created_at: string
+          email: string
+          findings: Json
+          growth_challenge: string | null
+          id: string
+          intent: string | null
+          overall_score: number
+          performance_score: number
+          product_score: number
+          seo_score: number
+          store_domain: string
+          store_url: string
+          trust_score: number
+        }
+        Insert: {
+          conversion_score: number
+          created_at?: string
+          email: string
+          findings?: Json
+          growth_challenge?: string | null
+          id?: string
+          intent?: string | null
+          overall_score: number
+          performance_score: number
+          product_score: number
+          seo_score: number
+          store_domain: string
+          store_url: string
+          trust_score: number
+        }
+        Update: {
+          conversion_score?: number
+          created_at?: string
+          email?: string
+          findings?: Json
+          growth_challenge?: string | null
+          id?: string
+          intent?: string | null
+          overall_score?: number
+          performance_score?: number
+          product_score?: number
+          seo_score?: number
+          store_domain?: string
+          store_url?: string
+          trust_score?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
