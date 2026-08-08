@@ -243,16 +243,14 @@ function ServiceDetailPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA + AUDIT FORM */}
       <section className="bg-background py-16">
-        <div className="mx-auto max-w-3xl px-4 text-center md:px-6">
-          <h2 className="text-3xl font-black tracking-tight md:text-4xl">
+        <div className="mx-auto max-w-3xl px-4 md:px-6">
+          <h2 className="text-center text-3xl font-black tracking-tight md:text-4xl">
             Let's Set Up <span className="text-primary">{service.name}</span> That Works for You
           </h2>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90">
-              Get A Free Store Audit <ArrowRight className="h-4 w-4" />
-            </Link>
+          <div className="mt-10">
+            <AuditForm serviceSlug={service.slug} serviceName={service.name} />
           </div>
         </div>
       </section>
