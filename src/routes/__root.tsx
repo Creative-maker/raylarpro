@@ -18,6 +18,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Marquee, Header, FloatingButtons } from "../components/site-chrome";
 import { PremiumFooter } from "../components/premium-footer";
+import { IntentPopup } from "../components/intent-popup";
 
 function NotFoundComponent() {
   return (
@@ -138,6 +139,7 @@ function RootComponent() {
         </main>
         <PremiumFooter />
         <FloatingButtons />
+        <IntentPopup />
       </div>
     </QueryClientProvider>
   );
