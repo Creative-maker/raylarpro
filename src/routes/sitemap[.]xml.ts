@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
-import { BLOG_POSTS } from "@/components/site-data";
+import { POSTS } from "@/components/site-data";
 import { CASE_STUDIES } from "@/components/case-study-data";
 import { SERVICE_PAGES } from "@/components/service-page-data";
 
