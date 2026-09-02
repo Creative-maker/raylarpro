@@ -25,7 +25,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/contact", changefreq: "monthly", priority: "0.7" },
         ];
 
-        for (const post of BLOG_POSTS) {
+        for (const post of POSTS) {
           entries.push({ path: `/blog/${encodeURIComponent(post.slug)}`, changefreq: "monthly", priority: "0.6" });
         }
         for (const study of CASE_STUDIES) {
