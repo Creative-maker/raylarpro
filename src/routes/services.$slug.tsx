@@ -16,13 +16,14 @@ export const Route = createFileRoute("/services/$slug")({
     if (!service) throw notFound();
     return { service };
   },
-  head: ({ loaderData }) => {
+  head: ({ loaderData, params }) => {
     if (!loaderData) {
       return { meta: [{ title: "Service not found — RaylarPro" }, { name: "robots", content: "noindex" }] };
     }
     const s = loaderData.service;
     const title = `${s.name} — ${s.categoryTitle} | RaylarPro`;
     const desc = s.heroSub.slice(0, 155);
+    const url = `https://raylarpro.lovable.app/services/${params.slug}`;
     return {
       meta: [
         { title },
@@ -30,7 +31,36 @@ export const Route = createFileRoute("/services/$slug")({
         { property: "og:title", content: title },
         { property: "og:description", content: desc },
         { property: "og:type", content: "website" },
+        { property: "og:url", content: url },
         { name: "twitter:card", content: "summary_large_image" },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: s.name,
+            serviceType: s.categoryTitle,
+            description: desc,
+            url,
+            provider: { "@id": "https://raylarpro.lovable.app/#organization" },
+            areaServed: "Worldwide",
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://raylarpro.lovable.app/" },
+              { "@type": "ListItem", position: 2, name: "Services", item: "https://raylarpro.lovable.app/services" },
+              { "@type": "ListItem", position: 3, name: s.name, item: url },
+            ],
+          }),
+        },
       ],
     };
   },
