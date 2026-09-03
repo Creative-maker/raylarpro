@@ -47,6 +47,48 @@ export type Database = {
         }
         Relationships: []
       }
+      seo_monitor_runs: {
+        Row: {
+          alert_sent: boolean
+          created_at: string
+          id: string
+          issues: Json
+          site_url: string
+          sitemap_errors: number
+          sitemap_warnings: number
+          status: string
+          summary: string | null
+          urls_checked: number
+          urls_indexed: number
+        }
+        Insert: {
+          alert_sent?: boolean
+          created_at?: string
+          id?: string
+          issues?: Json
+          site_url: string
+          sitemap_errors?: number
+          sitemap_warnings?: number
+          status?: string
+          summary?: string | null
+          urls_checked?: number
+          urls_indexed?: number
+        }
+        Update: {
+          alert_sent?: boolean
+          created_at?: string
+          id?: string
+          issues?: Json
+          site_url?: string
+          sitemap_errors?: number
+          sitemap_warnings?: number
+          status?: string
+          summary?: string | null
+          urls_checked?: number
+          urls_indexed?: number
+        }
+        Relationships: []
+      }
       store_audits: {
         Row: {
           conversion_score: number
