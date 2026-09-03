@@ -103,7 +103,53 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://raylarpro.lovable.app/#organization",
+          name: "RaylarPro",
+          url: "https://raylarpro.lovable.app",
+          logo: "https://raylarpro.lovable.app/favicon.png",
+          description:
+            "RaylarPro builds high-converting Shopify stores that grow faster, sell more, and scale better.",
+          areaServed: "Worldwide",
+          address: { "@type": "PostalAddress", addressCountry: "GB" },
+          sameAs: ["https://calendly.com/raylarpro"],
+          contactPoint: [
+            {
+              "@type": "ContactPoint",
+              contactType: "sales",
+              email: "raylarpro@gmail.com",
+              availableLanguage: ["English"],
+            },
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "@id": "https://raylarpro.lovable.app/#website",
+          name: "RaylarPro",
+          url: "https://raylarpro.lovable.app",
+          publisher: { "@id": "https://raylarpro.lovable.app/#organization" },
+          potentialAction: {
+            "@type": "SearchAction",
+            target: {
+              "@type": "EntryPoint",
+              urlTemplate: "https://raylarpro.lovable.app/blog?q={search_term_string}",
+            },
+            "query-input": "required name=search_term_string",
+          },
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
