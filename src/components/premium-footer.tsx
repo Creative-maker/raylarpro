@@ -5,6 +5,7 @@ import { ArrowRight, Linkedin, Github, Twitter, Dribbble, Mail } from "lucide-re
 import { CALENDLY, NAV } from "./site-data";
 import { FooterFaq } from "./footer-faq";
 import { SERVICE_PAGES } from "./service-page-data";
+import raylarLogo from "@/assets/raylar-logo.png.asset.json";
 
 const FOOTER_SERVICES = SERVICE_PAGES.filter((s) =>
   ["shopify-store-setup", "custom-theme-development", "conversion-rate-optimization", "speed-optimization", "technical-seo", "klaviyo-automation", "store-migration"].includes(s.slug),
@@ -127,7 +128,9 @@ export function PremiumFooter() {
           {/* Brand */}
           <div>
             <Link to="/" className="flex items-center gap-2">
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#0B0B0B] font-black text-white">R</span>
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-white p-1.5 ring-1 ring-black/10">
+                <img src={raylarLogo.url} alt="RaylarPro logo" className="h-full w-full object-contain" />
+              </span>
               <span className="text-lg font-bold tracking-tight">RaylarPro</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-black/60">
