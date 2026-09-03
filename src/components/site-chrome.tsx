@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Linkedin, Menu, X, MessageCircle, Calendar, Rocket } from "lucide-react";
 import { MARQUEE_TEXT, NAV, CALENDLY, WHATSAPP } from "./site-data";
+import raylarLogo from "@/assets/raylar-logo.png.asset.json";
 
 export function Marquee() {
   const item = (
@@ -52,7 +53,9 @@ export function Header() {
       <div className="pointer-events-none absolute inset-x-6 top-1/2 -z-10 h-16 -translate-y-1/2 rounded-full bg-primary/20 blur-2xl" />
       <div className="mx-auto flex h-[62px] w-full max-w-[1300px] items-center justify-between rounded-full border border-primary/30 bg-foreground/90 px-3 pl-5 text-background shadow-[0_10px_40px_-10px_rgba(0,0,0,0.35),0_0_0_1px_oklch(0.66_0.19_145/0.15),0_0_30px_-5px_oklch(0.66_0.19_145/0.35)] backdrop-blur-xl md:h-[70px] md:pl-6">
         <Link to="/" className="flex items-center gap-2 shrink-0">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground text-sm font-black">R</span>
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-white p-1">
+            <img src={raylarLogo.url} alt="RaylarPro logo" className="h-full w-full object-contain" />
+          </span>
           <span className="text-base font-bold tracking-tight">RaylarPro</span>
         </Link>
         <nav className="hidden xl:flex items-center gap-1 text-sm font-medium">
@@ -101,7 +104,9 @@ export function Footer() {
     <footer className="border-t border-border bg-background py-10">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 md:flex-row md:px-6">
         <Link to="/" className="flex items-center gap-2">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-sm font-black text-primary-foreground">R</span>
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-white p-1 ring-1 ring-border">
+            <img src={raylarLogo.url} alt="RaylarPro logo" className="h-full w-full object-contain" />
+          </span>
           <span className="font-bold">RaylarPro</span>
         </Link>
         <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
