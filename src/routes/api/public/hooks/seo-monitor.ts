@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { runSeoMonitorCheck, saveRun, sendAlertEmail } from "@/lib/seo-monitor.server";
+import { runSeoMonitorCheck, saveRun, sendNewIssuesAlert } from "@/lib/seo-monitor.server";
 
 export const Route = createFileRoute("/api/public/hooks/seo-monitor")({
   server: {
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/api/public/hooks/seo-monitor")({
         }
         try {
           const run = await runSeoMonitorCheck();
-          const alerted = run.status === "error" ? await sendAlertEmail(run) : false;
+          const alerted = run.status === "error" ? await sendNewIssuesAlert(run) : false;
           await saveRun(run, alerted);
           return new Response(JSON.stringify({ ok: true, status: run.status, issues: run.issues.length, alerted }), {
             headers: { "Content-Type": "application/json" },

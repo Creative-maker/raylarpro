@@ -6,9 +6,9 @@ export const getSeoMonitorRuns = createServerFn({ method: "GET" }).handler(async
 });
 
 export const triggerSeoMonitor = createServerFn({ method: "POST" }).handler(async () => {
-  const { runSeoMonitorCheck, saveRun, sendAlertEmail } = await import("./seo-monitor.server");
+  const { runSeoMonitorCheck, saveRun, sendNewIssuesAlert } = await import("./seo-monitor.server");
   const run = await runSeoMonitorCheck();
-  const alerted = run.status === "error" ? await sendAlertEmail(run) : false;
+  const alerted = run.status === "error" ? await sendNewIssuesAlert(run) : false;
   const saved = await saveRun(run, alerted);
   return { run: saved, alerted };
 });
