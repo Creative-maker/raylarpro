@@ -189,7 +189,7 @@ export async function saveRun(run: SeoRun, alertSent: boolean) {
   const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
   const { data, error } = await supabaseAdmin
     .from("seo_monitor_runs")
-    .insert({ ...run, alert_sent: alertSent })
+    .insert({ ...run, issues: run.issues as unknown as never, alert_sent: alertSent })
     .select()
     .single();
   if (error) throw new Error(error.message);
