@@ -246,7 +246,7 @@ async function loadAlertedIssueSignatures(): Promise<Set<string>> {
   if (error) throw new Error(error.message);
   const sigs = new Set<string>();
   for (const row of data ?? []) {
-    const issues = (row.issues ?? []) as SeoIssue[];
+    const issues = (row.issues ?? []) as unknown as SeoIssue[];
     for (const i of issues) {
       if (i.severity === "error") sigs.add(issueSignature(i));
     }
