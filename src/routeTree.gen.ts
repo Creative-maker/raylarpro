@@ -24,6 +24,7 @@ import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ApiPublicHooksSeoMonitorRouteImport } from './routes/api/public/hooks/seo-monitor'
+import { Route as ApiPublicHooksIndexnowRouteImport } from './routes/api/public/hooks/indexnow'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -101,6 +102,11 @@ const ApiPublicHooksSeoMonitorRoute =
     path: '/api/public/hooks/seo-monitor',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiPublicHooksIndexnowRoute = ApiPublicHooksIndexnowRouteImport.update({
+  id: '/api/public/hooks/indexnow',
+  path: '/api/public/hooks/indexnow',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -117,6 +123,7 @@ export interface FileRoutesByFullPath {
   '/services/$slug': typeof ServicesSlugRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/api/public/hooks/indexnow': typeof ApiPublicHooksIndexnowRoute
   '/api/public/hooks/seo-monitor': typeof ApiPublicHooksSeoMonitorRoute
 }
 export interface FileRoutesByTo {
@@ -132,6 +139,7 @@ export interface FileRoutesByTo {
   '/services/$slug': typeof ServicesSlugRoute
   '/case-studies': typeof CaseStudiesIndexRoute
   '/services': typeof ServicesIndexRoute
+  '/api/public/hooks/indexnow': typeof ApiPublicHooksIndexnowRoute
   '/api/public/hooks/seo-monitor': typeof ApiPublicHooksSeoMonitorRoute
 }
 export interface FileRoutesById {
@@ -150,6 +158,7 @@ export interface FileRoutesById {
   '/services/$slug': typeof ServicesSlugRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/api/public/hooks/indexnow': typeof ApiPublicHooksIndexnowRoute
   '/api/public/hooks/seo-monitor': typeof ApiPublicHooksSeoMonitorRoute
 }
 export interface FileRouteTypes {
@@ -169,6 +178,7 @@ export interface FileRouteTypes {
     | '/services/$slug'
     | '/case-studies/'
     | '/services/'
+    | '/api/public/hooks/indexnow'
     | '/api/public/hooks/seo-monitor'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -184,6 +194,7 @@ export interface FileRouteTypes {
     | '/services/$slug'
     | '/case-studies'
     | '/services'
+    | '/api/public/hooks/indexnow'
     | '/api/public/hooks/seo-monitor'
   id:
     | '__root__'
@@ -201,6 +212,7 @@ export interface FileRouteTypes {
     | '/services/$slug'
     | '/case-studies/'
     | '/services/'
+    | '/api/public/hooks/indexnow'
     | '/api/public/hooks/seo-monitor'
   fileRoutesById: FileRoutesById
 }
@@ -214,6 +226,7 @@ export interface RootRouteChildren {
   SeoMonitorRoute: typeof SeoMonitorRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ApiPublicHooksIndexnowRoute: typeof ApiPublicHooksIndexnowRoute
   ApiPublicHooksSeoMonitorRoute: typeof ApiPublicHooksSeoMonitorRoute
 }
 
@@ -324,6 +337,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicHooksSeoMonitorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/hooks/indexnow': {
+      id: '/api/public/hooks/indexnow'
+      path: '/api/public/hooks/indexnow'
+      fullPath: '/api/public/hooks/indexnow'
+      preLoaderRoute: typeof ApiPublicHooksIndexnowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -375,6 +395,7 @@ const rootRouteChildren: RootRouteChildren = {
   SeoMonitorRoute: SeoMonitorRoute,
   ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ApiPublicHooksIndexnowRoute: ApiPublicHooksIndexnowRoute,
   ApiPublicHooksSeoMonitorRoute: ApiPublicHooksSeoMonitorRoute,
 }
 export const routeTree = rootRouteImport
