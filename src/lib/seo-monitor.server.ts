@@ -232,3 +232,36 @@ export async function sendAlertEmail(run: SeoRun): Promise<boolean> {
     return false;
   }
 }
+
+function issueSignature(i: SeoIssue): string {
+  return `${i.type}|${i.url}|${i.message}`;
+}
+
+async function loadAlertedIssueSignatures(): Promise<Set<string>> {
+  const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+  const { data, error } = await supabaseAdmin
+    .from("seo_monitor_runs")
+    .select("issues")
+    .eq("alert_sent", true);
+  if (error) throw new Error(error.message);
+  const sigs = new Set<string>();
+  for (const row of data ?? []) {
+    const issues = (row.issues ?? []) as unknown as SeoIssue[];
+    for (const i of issues) {
+      if (i.severity === "error") sigs.add(issueSignature(i));
+    }
+  }
+  return sigs;
+}
+
+/** Send an alert email only for error-level issues that have not been alerted before. */
+export async function sendNewIssuesAlert(run: SeoRun): Promise<boolean> {
+  const sigs = await loadAlertedIssueSignatures();
+  const newIssues = run.issues.filter((i) => i.severity === "error" && !sigs.has(issueSignature(i)));
+  if (newIssues.length === 0) return false;
+  return sendAlertEmail({
+    ...run,
+    issues: newIssues,
+    summary: `${newIssues.length} new SEO issue(s) detected on raylarpro.lovable.app.`,
+  });
+}
