@@ -87,7 +87,7 @@ export const runStoreAudit = createServerFn({ method: "POST" })
           .map((c) => `<tr><td style="padding:4px 12px 4px 0">${c.label}</td><td style="font-weight:700">${c.score}</td></tr>`)
           .join("");
         const opps = result.findings
-          .map((f, i) => `<li><strong>${String(i + 1).padStart(2, "0")} — ${f.title}</strong><br/>${f.detail}</li>`)
+          .map((f, i) => `<li><strong>${String(i + 1).padStart(2, "0")} , ${f.title}</strong><br/>${f.detail}</li>`)
           .join("");
         try {
           await fetch("https://api.resend.com/emails", {
@@ -96,15 +96,15 @@ export const runStoreAudit = createServerFn({ method: "POST" })
             body: JSON.stringify({
               from: "RaylarPro Audits <onboarding@resend.dev>",
               to: [to],
-              subject: `New RaylarPro Shopify Audit Lead — ${result.domain}`,
+              subject: `New RaylarPro Shopify Audit Lead , ${result.domain}`,
               html: `
                 <div style="font-family:Inter,Arial,sans-serif;color:#111;line-height:1.55">
                   <h2 style="margin:0 0 4px">New Shopify Audit Lead</h2>
-                  <p style="margin:0 0 18px;color:#555">${result.domain} — overall score <strong>${result.overall}/100</strong></p>
-                  <p><strong>Visitor intent:</strong> ${data.intent ?? "—"}<br/>
+                  <p style="margin:0 0 18px;color:#555">${result.domain} , overall score <strong>${result.overall}/100</strong></p>
+                  <p><strong>Visitor intent:</strong> ${data.intent ?? ","}<br/>
                   <strong>Store URL:</strong> <a href="${result.url}">${result.url}</a><br/>
                   <strong>Email:</strong> ${data.email}<br/>
-                  <strong>Growth challenge:</strong> ${data.challenge ?? "—"}<br/>
+                  <strong>Growth challenge:</strong> ${data.challenge ?? ","}<br/>
                   <strong>Submitted:</strong> ${new Date().toUTCString()}</p>
                   <h3 style="margin:20px 0 6px">Scores</h3>
                   <table>${rows}</table>

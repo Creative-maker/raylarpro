@@ -8,9 +8,9 @@ import { StoreThumb } from "@/components/store-thumb";
 export const Route = createFileRoute("/case-studies/")({
   head: () => ({
     meta: [
-      { title: "Case Studies — Shopify Stores by RaylarPro" },
+      { title: "Case Studies , Shopify Stores by RaylarPro" },
       { name: "description", content: "Explore Shopify stores designed, built and optimized by RaylarPro across fashion, wellness, skincare, sportswear and lifestyle brands." },
-      { property: "og:title", content: "Case Studies — RaylarPro" },
+      { property: "og:title", content: "Case Studies , RaylarPro" },
       { property: "og:description", content: "A showcase of Shopify stores built for real growth." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -25,7 +25,7 @@ function CaseStudiesPage() {
       <PageHero
         eyebrow="Case Studies"
         title="Stores Built to Sell"
-        sub="A collection of Shopify stores I have designed, developed, and optimized — each tailored to the brand's audience and goals."
+        sub="A collection of Shopify stores I have designed, developed, and optimized , each tailored to the brand's audience and goals."
       />
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 md:px-6">

@@ -118,9 +118,9 @@ const OPENERS = [
   (b: string, i: string) =>
     `When the ${b} team first shared their analytics, the pattern was familiar: healthy traffic, respectable product interest, and a checkout that let too many of those shoppers slip away. In ${i.toLowerCase()}, that gap is expensive.`,
   (b: string, i: string) =>
-    `${b} had already proven demand offline and through wholesale. What they did not yet have was a Shopify experience that could carry a ${i.toLowerCase()} brand at scale — fast, clear, and trustworthy on a phone.`,
+    `${b} had already proven demand offline and through wholesale. What they did not yet have was a Shopify experience that could carry a ${i.toLowerCase()} brand at scale , fast, clear, and trustworthy on a phone.`,
   (b: string) =>
-    `The brief from ${b} was refreshingly blunt: "the store looks fine, it just doesn't sell like it should." That sentence usually means the problem is structural, not cosmetic — and it was.`,
+    `The brief from ${b} was refreshingly blunt: "the store looks fine, it just doesn't sell like it should." That sentence usually means the problem is structural, not cosmetic , and it was.`,
   (b: string, i: string) =>
     `Growth had stalled at ${b}. Ad costs were climbing, the ${i.toLowerCase()} category was getting more competitive, and every extra pound of traffic was landing on pages that had never been built to convert.`,
   (b: string) =>
@@ -136,7 +136,7 @@ const CHALLENGE_POOL = [
   "No structured data, so rich results and AI answers never surfaced the catalogue",
   "Search and filtering that returned irrelevant results on large collections",
   "Abandoned cart flows either missing or firing at the wrong moment",
-  "Analytics half-configured — revenue attribution could not be trusted",
+  "Analytics half-configured , revenue attribution could not be trusted",
   "Duplicate and thin pages competing with each other in organic search",
   "Slow LCP driven by unoptimised hero imagery and third-party embeds",
   "Inventory and variant data inconsistent between the ERP and Shopify",
@@ -156,7 +156,7 @@ const WORK_POOL: { title: string; body: string }[] = [
   { title: "Klaviyo lifecycle flows", body: "Welcome, browse-abandon, cart-abandon, post-purchase and win-back flows were built and segmented, with timing and messaging tuned to the brand's actual purchase cycle rather than a template default." },
   { title: "Paid traffic alignment", body: "Campaign traffic was redirected from the homepage to intent-matched landing pages and feeds were cleaned so Shopping and Performance Max served accurate titles, pricing and availability." },
   { title: "Analytics and attribution rebuild", body: "GA4, server-side events and Shopify's own reporting were reconciled so every conversion is counted once. Dashboards were built around revenue per session, not vanity traffic." },
-  { title: "App stack rationalisation", body: "Overlapping apps were removed and their functionality moved into native theme code where it made sense — lighter pages, lower monthly spend and fewer conflicts after Shopify updates." },
+  { title: "App stack rationalisation", body: "Overlapping apps were removed and their functionality moved into native theme code where it made sense , lighter pages, lower monthly spend and fewer conflicts after Shopify updates." },
   { title: "Accessibility and QA pass", body: "Contrast, focus states, keyboard navigation and screen-reader labelling were corrected across templates, then the full purchase path was tested on real devices before release." },
   { title: "Internationalisation", body: "Markets, currencies and language routing were configured properly with hreflang, so each region has an indexable storefront rather than a redirect." },
   { title: "Search and filtering", body: "On-site search was tuned with synonyms, typo tolerance and merchandising rules, and faceted filters were added to the largest collections so deep catalogues stay browsable." },
@@ -165,7 +165,7 @@ const WORK_POOL: { title: string; body: string }[] = [
 
 const RESULT_POOL = [
   { title: "A storefront that finally matches the brand", body: "The rebuilt theme presents the catalogue with the clarity and confidence the products deserve, on every screen size." },
-  { title: "Faster pages, cheaper traffic", body: "Speed improvements lifted both organic visibility and paid quality signals — the same budget now buys more qualified sessions." },
+  { title: "Faster pages, cheaper traffic", body: "Speed improvements lifted both organic visibility and paid quality signals , the same budget now buys more qualified sessions." },
   { title: "A measurably smoother checkout", body: "Fewer steps, clearer shipping and wallet payments cut the number of shoppers lost between cart and confirmation." },
   { title: "Owned revenue that compounds", body: "Lifecycle email and SMS flows now recover carts and bring buyers back automatically, month after month." },
   { title: "Search visibility that keeps growing", body: "Clean technical foundations and structured data mean new products are indexed quickly and surfaced accurately, including in AI answers." },
@@ -174,7 +174,7 @@ const RESULT_POOL = [
 ];
 
 const QUOTES = [
-  "The difference was obvious within weeks. Same products, same ad budget — the store just stopped losing people.",
+  "The difference was obvious within weeks. Same products, same ad budget , the store just stopped losing people.",
   "This was the first time someone explained what was wrong in plain language and then actually fixed it.",
   "We had been told for years that our store was 'fine'. It was not, and now we can see the difference in the numbers.",
   "Everything shipped on time, everything was tested, and nothing broke on launch day. That alone was worth it.",
@@ -241,7 +241,7 @@ function buildCaseStudy(p: (typeof PROJECTS)[number]): CaseStudy {
     `How ${p.title} turned an ageing storefront into a growth engine`,
     `${p.title}: from slow and leaky to fast, findable and profitable`,
     `Scaling ${industry.toLowerCase()}: the ${p.title} Shopify story`,
-    `Inside the ${p.title} rebuild — speed, structure and sales`,
+    `Inside the ${p.title} rebuild , speed, structure and sales`,
   ];
 
   const name = pick(FIRST_NAMES, r);
@@ -268,7 +268,7 @@ function buildCaseStudy(p: (typeof PROJECTS)[number]): CaseStudy {
     ],
     meet: [
       `${p.title} is a ${industry.toLowerCase()} retailer trading from ${country} at ${p.url.replace(/^https?:\/\//, "")}. The brand has been selling since ${founded} and reached me with a catalogue that had outgrown the storefront around it.`,
-      `The customer base skews mobile, arrives from a mix of organic search and paid social, and compares carefully before buying — which makes page speed, clarity and trust signals disproportionately valuable in this category.`,
+      `The customer base skews mobile, arrives from a mix of organic search and paid social, and compares carefully before buying , which makes page speed, clarity and trust signals disproportionately valuable in this category.`,
     ],
     challengeIntro: `The audit surfaced five issues that between them explained most of the lost revenue. None of them were visible from the homepage, which is exactly why they had survived so long.`,
     challenges,
@@ -282,8 +282,8 @@ function buildCaseStudy(p: (typeof PROJECTS)[number]): CaseStudy {
       { phase: "Weeks 7–8", label: "Launch", body: "Staged release, redirect mapping, analytics validation and a monitored first week of live traffic." },
       { phase: "Ongoing", label: "Optimise", body: "Fortnightly test cycles across product pages, lifecycle flows and paid landing pages." },
     ],
-    quote: { text: pick(QUOTES, r), name: `${name} — ${p.title}`, role },
-    takeaway: `${p.title} did not need a bigger budget. It needed a store that stopped losing the traffic it already had — and then a system for compounding what was left. That order matters, and it is the same order I would apply to your store.`,
+    quote: { text: pick(QUOTES, r), name: `${name} , ${p.title}`, role },
+    takeaway: `${p.title} did not need a bigger budget. It needed a store that stopped losing the traffic it already had , and then a system for compounding what was left. That order matters, and it is the same order I would apply to your store.`,
   };
 }
 

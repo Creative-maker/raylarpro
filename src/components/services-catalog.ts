@@ -10,7 +10,7 @@ export type ServiceCategory = {
 export const SERVICE_CATEGORIES: ServiceCategory[] = [
   {
     slug: "shopify-development",
-    label: "01 — Build",
+    label: "01 , Build",
     title: "Shopify Development",
     desc: "Build fast, scalable Shopify stores designed for growth.",
     items: [
@@ -24,7 +24,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
   },
   {
     slug: "store-optimization-cro",
-    label: "02 — Convert",
+    label: "02 , Convert",
     title: "Store Optimization & CRO",
     desc: "Increase conversions and maximize revenue from your existing traffic.",
     items: [
@@ -38,7 +38,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
   },
   {
     slug: "seo-ai-search",
-    label: "03 — Discover",
+    label: "03 , Discover",
     title: "SEO & AI Search Optimization",
     desc: "Help customers discover your store through organic and AI-powered search.",
     items: [
@@ -52,7 +52,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
   },
   {
     slug: "sem-paid-growth",
-    label: "04 — Acquire",
+    label: "04 , Acquire",
     title: "Search Engine Marketing (SEM) & Paid Growth",
     desc: "Drive qualified traffic through high-performing paid advertising campaigns.",
     items: [
@@ -66,7 +66,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
   },
   {
     slug: "email-sms-marketing",
-    label: "05 — Retain",
+    label: "05 , Retain",
     title: "Email & SMS Marketing",
     desc: "Turn one-time buyers into loyal repeat customers.",
     items: [
@@ -80,7 +80,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
   },
   {
     slug: "integrations-ai-automation",
-    label: "06 — Automate",
+    label: "06 , Automate",
     title: "Integrations & AI Automation",
     desc: "Connect your tools and automate repetitive tasks to scale efficiently.",
     items: [
@@ -94,7 +94,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
   },
   {
     slug: "growth-consultancy",
-    label: "07 — Scale",
+    label: "07 , Scale",
     title: "Shopify Growth Consultancy",
     desc: "Strategic guidance to help your business grow with confidence.",
     items: [

@@ -10,12 +10,12 @@ export const Route = createFileRoute("/blog/$slug")({
   },
   head: ({ loaderData, params }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Article not found — RaylarPro" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Article not found , RaylarPro" }, { name: "robots", content: "noindex" }] };
     }
     const p = loaderData.post;
     return {
       meta: [
-        { title: `${p.title} — RaylarPro` },
+        { title: `${p.title} , RaylarPro` },
         { name: "description", content: p.desc },
         { property: "og:title", content: p.title },
         { property: "og:description", content: p.desc },
@@ -123,7 +123,7 @@ function PostPage() {
           {/* CTA */}
           <div className="mt-12 rounded-2xl bg-card p-6 ring-1 ring-border md:p-8">
             <h3 className="text-xl font-extrabold tracking-tight md:text-2xl">Want this applied to your store?</h3>
-            <p className="mt-2 text-muted-foreground">Book a free 20-minute call or send me a message on WhatsApp — I will personally look at your store and tell you the three things I would fix first.</p>
+            <p className="mt-2 text-muted-foreground">Book a free 20-minute call or send me a message on WhatsApp , I will personally look at your store and tell you the three things I would fix first.</p>
             <div className="mt-5 flex flex-wrap gap-3">
               <a href={CALENDLY} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90">
                 <Calendar className="h-4 w-4" /> Book a Free Call

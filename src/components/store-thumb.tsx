@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Globe } from "lucide-react";
 
 /**
- * StoreThumb — resilient screenshot thumbnail for a store hero page.
+ * StoreThumb , resilient screenshot thumbnail for a store hero page.
  *
  * - Lazy: only starts loading when scrolled near the viewport.
  * - Cached: successful screenshot URLs are remembered in localStorage for 7 days,
@@ -44,7 +44,7 @@ function writeCache(key: string, url: string) {
     cache[key] = { url, t: Date.now() };
     window.localStorage.setItem(CACHE_KEY, JSON.stringify(cache));
   } catch {
-    /* storage full or unavailable — caching is best-effort */
+    /* storage full or unavailable , caching is best-effort */
   }
 }
 
@@ -125,7 +125,7 @@ export function StoreThumb({
     setStatus("loading");
   }, [inView, attempt, host, url, img]);
 
-  // Slow provider (mshots renders async) — retry once the wait gets long
+  // Slow provider (mshots renders async) , retry once the wait gets long
   useEffect(() => {
     if (status !== "loading") return;
     const t = window.setTimeout(() => {

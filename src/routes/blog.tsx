@@ -7,9 +7,9 @@ import { POSTS } from "@/components/site-data";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Blog & Resources — Shopify Growth Tips | RaylarPro" },
-      { name: "description", content: "Practical Shopify guides on CRO, SEO, speed, Klaviyo email flows, and product page design — from RaylarPro." },
-      { property: "og:title", content: "Blog & Resources — RaylarPro" },
+      { title: "Blog & Resources , Shopify Growth Tips | RaylarPro" },
+      { name: "description", content: "Practical Shopify guides on CRO, SEO, speed, Klaviyo email flows, and product page design , from RaylarPro." },
+      { property: "og:title", content: "Blog & Resources , RaylarPro" },
       { property: "og:description", content: "Guides and playbooks for growing your Shopify store." },
       { property: "og:url", content: "/blog" },
     ],
@@ -40,7 +40,7 @@ function BlogPage() {
       <PageHero
         eyebrow="Blog & Resources"
         title="Playbooks for Shopify Growth"
-        sub="Practical guides on conversion, SEO, speed, and email — pulled from real client work."
+        sub="Practical guides on conversion, SEO, speed, and email , pulled from real client work."
       />
 
       <section className="py-16">
@@ -145,7 +145,7 @@ function BlogPage() {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  alert("Thanks — you're on the list.");
+                  alert("Thanks , you're on the list.");
                 }}
                 className="flex w-full max-w-md flex-col gap-2 sm:flex-row"
               >

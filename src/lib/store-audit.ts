@@ -68,7 +68,7 @@ export function analyze(input: {
   if (jsonLd === 0) { seo -= 14; add("SEO & Discoverability", "Add structured data", "No JSON-LD structured data was detected. Product, Organization and Breadcrumb schema unlock rich results and star ratings."); }
   if (!canonical) seo -= 6;
   if (!ogTitle) { seo -= 6; add("SEO & Discoverability", "Add Open Graph tags", "Missing og: tags mean links shared on WhatsApp, X and Facebook render as plain text."); }
-  if (noindex) { seo -= 30; add("SEO & Discoverability", "Page is set to noindex", "A robots noindex directive was found — this page is asking search engines not to list it."); }
+  if (noindex) { seo -= 30; add("SEO & Discoverability", "Page is set to noindex", "A robots noindex directive was found , this page is asking search engines not to list it."); }
 
   /* ---------------- Performance ---------------- */
   const imgs = count(html, /<img[\s>]/gi);
@@ -79,7 +79,7 @@ export function analyze(input: {
   const kb = Math.round(bytes / 1024);
 
   let perf = 100;
-  if (ttfbMs > 1200) { perf -= 22; add("Performance", "Slow server response", `First byte took ${ttfbMs}ms. Anything over 800ms delays every other asset — usually app bloat or heavy Liquid loops.`); }
+  if (ttfbMs > 1200) { perf -= 22; add("Performance", "Slow server response", `First byte took ${ttfbMs}ms. Anything over 800ms delays every other asset , usually app bloat or heavy Liquid loops.`); }
   else if (ttfbMs > 800) perf -= 12;
   if (kb > 600) { perf -= 18; add("Performance", "Trim the HTML payload", `The homepage document alone is ${kb}KB before images. Heavy inline markup and app snippets push mobile LCP past the 2.5s threshold.`); }
   else if (kb > 350) perf -= 8;
@@ -125,13 +125,13 @@ export function analyze(input: {
 
   let conv = 100;
   if (ctaCount === 0) { conv -= 24; add("Conversion & UX", "Strengthen your primary call to action", "No clear buying CTA (Add to cart / Shop now / Buy now) was detected above the fold. A single, repeated, high-contrast action beats several competing links."); }
-  else if (ctaCount < 3) { conv -= 10; add("Conversion & UX", "Repeat the CTA down the page", `Only ${ctaCount} buying CTA${ctaCount === 1 ? " was" : "s were"} found. Shoppers decide at different scroll depths — repeat the action after each proof block.`); }
+  else if (ctaCount < 3) { conv -= 10; add("Conversion & UX", "Repeat the CTA down the page", `Only ${ctaCount} buying CTA${ctaCount === 1 ? " was" : "s were"} found. Shoppers decide at different scroll depths , repeat the action after each proof block.`); }
   if (!heroCopy) { conv -= 14; add("Conversion & UX", "Clarify the value proposition", "There is no headline stating what you sell and why it is better. A visitor should understand the offer in five seconds."); }
   else if (heroCopy.length < 15) { conv -= 8; add("Conversion & UX", "Expand the hero headline", `Your main headline is very short ("${heroCopy}"). Add the outcome the customer gets, not just the brand name.`); }
   if (navLinks === 0) { conv -= 10; add("Conversion & UX", "Add clear primary navigation", "No semantic navigation element was found, which hurts product discovery and accessibility."); }
   if (!search) { conv -= 10; add("Conversion & UX", "Add storefront search", "No search input was detected. Visitors who search convert at multiples of those who browse."); }
   if (collections < 3) { conv -= 12; add("Conversion & UX", "Improve product discovery", `Only ${collections} collection link${collections === 1 ? "" : "s"} were found on the landing page. Surface your best-selling categories directly.`); }
-  if (!viewport) { conv -= 16; add("Conversion & UX", "Fix the mobile viewport", "No responsive viewport meta tag was found — mobile visitors will see a zoomed-out desktop layout."); }
+  if (!viewport) { conv -= 16; add("Conversion & UX", "Fix the mobile viewport", "No responsive viewport meta tag was found , mobile visitors will see a zoomed-out desktop layout."); }
   if (popupClutter > 6) conv -= 6;
 
   /* ---------------- Product experience ---------------- */
@@ -149,7 +149,7 @@ export function analyze(input: {
   if (!variants.test(text)) prod -= 8;
   if (!stock.test(text)) { prod -= 8; add("Product Experience", "Show availability signals", "No stock or availability wording was found. Honest low-stock and in-stock labels reduce hesitation."); }
   if (!benefits.test(text)) { prod -= 12; add("Product Experience", "Lead with benefits, not specs", "No benefit-led copy blocks were detected. Tell shoppers what changes for them before listing specifications."); }
-  if (!bundle.test(text)) { prod -= 8; add("Product Experience", "Add an AOV lever", "No bundles, volume savings or gift offers were detected — the fastest way to lift average order value on existing traffic."); }
+  if (!bundle.test(text)) { prod -= 8; add("Product Experience", "Add an AOV lever", "No bundles, volume savings or gift offers were detected , the fastest way to lift average order value on existing traffic."); }
   if (!reviewSignals.test(text)) prod -= 12;
 
   const shopify = /cdn\.shopify\.com|shopify\.theme|myshopify\.com|shopifycloud/.test(lower);
@@ -180,7 +180,7 @@ export function analyze(input: {
     ranked.push({
       category: "Conversion & UX",
       title: "No blocking issues found in the public scan",
-      detail: `${domain} passes every automated public check. The next gains come from testing offers, merchandising and checkout — which needs analytics access, not a page scan.`,
+      detail: `${domain} passes every automated public check. The next gains come from testing offers, merchandising and checkout , which needs analytics access, not a page scan.`,
     });
   }
 
@@ -193,6 +193,6 @@ export function analyze(input: {
     checkedAt: new Date().toISOString(),
     platformNote: shopify
       ? "Shopify storefront detected."
-      : "This does not look like a Shopify storefront — checks were run against the public page as-is.",
+      : "This does not look like a Shopify storefront , checks were run against the public page as-is.",
   };
 }

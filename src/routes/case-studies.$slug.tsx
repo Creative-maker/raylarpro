@@ -13,13 +13,13 @@ export const Route = createFileRoute("/case-studies/$slug")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Case study unavailable — RaylarPro" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Case study unavailable , RaylarPro" }, { name: "robots", content: "noindex" }] };
     }
     const s = loaderData.study;
     const desc = `${s.title} Shopify case study: the audit, the rebuild, the lifecycle work and the before-and-after numbers from a ${s.industry.toLowerCase()} store in ${s.country}.`;
     return {
       meta: [
-        { title: `${s.title} Case Study — Shopify Growth by RaylarPro` },
+        { title: `${s.title} Case Study , Shopify Growth by RaylarPro` },
         { name: "description", content: desc },
         { property: "og:title", content: `${s.headline}` },
         { property: "og:description", content: desc },

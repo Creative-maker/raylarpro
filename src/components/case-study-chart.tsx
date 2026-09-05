@@ -168,7 +168,7 @@ export function CaseStudyChart({ metrics }: { metrics: Metric[] }) {
             <span className="text-muted-foreground">
               {current.label} moved from <strong className="text-foreground">{current.before}</strong> to{" "}
               <strong className="text-foreground">{current.after}</strong>
-              {current.lowerIsBetter ? " — lower is better here." : "."}
+              {current.lowerIsBetter ? " , lower is better here." : "."}
             </span>
           </div>
         ) : (

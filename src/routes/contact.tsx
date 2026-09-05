@@ -8,7 +8,7 @@ import { WHATSAPP, CALENDLY } from "@/components/site-data";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact RaylarPro — Start Your Shopify Project" },
+      { title: "Contact RaylarPro , Start Your Shopify Project" },
       { name: "description", content: "Get in touch with RaylarPro. Email, phone, WhatsApp, or book a free call to discuss your Shopify store project." },
       { property: "og:title", content: "Contact RaylarPro" },
       { property: "og:description", content: "Let's talk about your Shopify store." },

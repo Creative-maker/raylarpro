@@ -54,7 +54,7 @@ const HERO_VERBS = [
 ];
 
 const HERO_SUBS = [
-  "Give your store the best possible start. A clean, launch-ready foundation that is organised, optimised and easy to manage — so you can focus on growing the brand while the store takes care of sales.",
+  "Give your store the best possible start. A clean, launch-ready foundation that is organised, optimised and easy to manage , so you can focus on growing the brand while the store takes care of sales.",
   "Stop guessing what is holding revenue back. Get a measured, documented improvement programme with clear before-and-after numbers you can take to the board.",
   "Built the way high-growth Shopify brands build: fast, tested, documented, and handed over so your team can run it without me in the room.",
   "Every change is tied to a metric. Nothing ships unless it makes the store faster, clearer, or more profitable.",
@@ -63,7 +63,7 @@ const HERO_SUBS = [
 const PILLAR_TEMPLATES: ((n: string, c: string) => Pillar)[] = [
   (n) => ({
     title: `End-to-End ${n}`,
-    desc: `Everything is handled — discovery, build, QA and handover — so ${n.toLowerCase()} is delivered complete, without loose ends or half-finished tickets.`,
+    desc: `Everything is handled , discovery, build, QA and handover , so ${n.toLowerCase()} is delivered complete, without loose ends or half-finished tickets.`,
   }),
   () => ({
     title: "Speed, Stability and Store Performance",
@@ -71,7 +71,7 @@ const PILLAR_TEMPLATES: ((n: string, c: string) => Pillar)[] = [
   }),
   () => ({
     title: "Smooth Management and Maintenance",
-    desc: "Regular updates, backups, app hygiene and performance checks keep the store running efficiently every day after launch — not just on day one.",
+    desc: "Regular updates, backups, app hygiene and performance checks keep the store running efficiently every day after launch , not just on day one.",
   }),
   () => ({
     title: "Scalable, Growth-Ready Structure",
@@ -90,13 +90,13 @@ const PILLAR_TEMPLATES: ((n: string, c: string) => Pillar)[] = [
 const STEP_SETS: Step[][] = [
   [
     { title: "Discovery & Planning", desc: "We map your products, customers and commercial goals, then agree scope, timeline and the metrics this engagement is judged on." },
-    { title: "Setup & Configuration", desc: "Core configuration is completed — settings, taxes, shipping, payments, domains, apps and integrations — with a documented checklist." },
+    { title: "Setup & Configuration", desc: "Core configuration is completed , settings, taxes, shipping, payments, domains, apps and integrations , with a documented checklist." },
     { title: "Content & Design Alignment", desc: "Templates, collections and content are aligned to the brand so the storefront looks intentional and merchandises properly." },
     { title: "Review & Launch Prep", desc: "Cross-device QA, analytics validation, redirects and a full pre-launch checklist before anything goes live." },
     { title: "Post-Launch Support", desc: "After launch I keep monitoring performance, managing updates and maintaining apps so the experience stays frictionless for you and your customers." },
   ],
   [
-    { title: "Audit & Baseline", desc: "Current performance is measured and recorded — analytics, session recordings, field data and revenue per session — so improvement is provable." },
+    { title: "Audit & Baseline", desc: "Current performance is measured and recorded , analytics, session recordings, field data and revenue per session , so improvement is provable." },
     { title: "Opportunity Mapping", desc: "Findings are ranked by expected impact against effort, producing a prioritised roadmap rather than a list of opinions." },
     { title: "Build & Implement", desc: "Changes are built on a staging theme, peer-reviewed and shipped in controlled batches so nothing destabilises the live store." },
     { title: "Validate & Measure", desc: "Each release is measured against the baseline; anything that underperforms is rolled back or iterated." },
@@ -136,7 +136,7 @@ const DELIVERABLE_POOL = [
 const QUOTES = [
   { quote: "What stood out most was the reliability. Everything landed on time, and I never had to chase an update. The work paid for itself in the first month.", name: "Marcus Chen", meta: "eCommerce Founder" },
   { quote: "Finally someone who explains the commercial reasoning, not just the code. Our store is faster, cleaner and customers are actually completing checkout.", name: "Rachel Foster", meta: "Boutique Owner" },
-  { quote: "We had three agencies before this. The difference was the measurement — every change came with a number attached.", name: "Daniel Wright", meta: "DTC Brand" },
+  { quote: "We had three agencies before this. The difference was the measurement , every change came with a number attached.", name: "Daniel Wright", meta: "DTC Brand" },
   { quote: "Professional, calm and genuinely invested in the outcome. Our revenue per session is up and the team can finally manage the store themselves.", name: "Amara Okafor", meta: "Head of eCommerce" },
 ];
 
@@ -166,7 +166,7 @@ function buildFaqs(name: string, category: string, seed: number): QA[] {
     },
     {
       q: `How long does ${name} usually take?`,
-      a: `Most ${name.toLowerCase()} engagements run between two and six weeks depending on catalogue size, the number of integrations, and how quickly content and approvals come back. A firm timeline is confirmed after the discovery call — and I hold to it.`,
+      a: `Most ${name.toLowerCase()} engagements run between two and six weeks depending on catalogue size, the number of integrations, and how quickly content and approvals come back. A firm timeline is confirmed after the discovery call , and I hold to it.`,
     },
     {
       q: "Do I need to buy a Shopify plan before we start?",
@@ -186,7 +186,7 @@ function buildFaqs(name: string, category: string, seed: number): QA[] {
     },
     {
       q: "What happens after the project ends?",
-      a: "You get a Loom walkthrough, written SOPs and 30 days of support. Beyond that, ongoing retainers are available for maintenance, monitoring and continuous optimisation — but they are optional, never a lock-in.",
+      a: "You get a Loom walkthrough, written SOPs and 30 days of support. Beyond that, ongoing retainers are available for maintenance, monitoring and continuous optimisation , but they are optional, never a lock-in.",
     },
     {
       q: "How do payments and guarantees work?",
@@ -225,7 +225,7 @@ function buildServicePage(name: string, category: (typeof SERVICE_CATEGORIES)[nu
     heroTitle: `${pick(HERO_VERBS, seed)} Your Store With ${clean}`,
     heroSub: pick(HERO_SUBS, seed, 1),
     whatWeDoTitle: `${/^shopify/i.test(clean) ? clean : `Shopify ${clean}`} That Performs, Converts and Sells`,
-    whatWeDoBody: `${category.desc} ${clean} is where that starts. Launching or changing a Shopify store is only the beginning — what matters is keeping it optimised for performance, conversion and sustainable growth. I handle both sides: a solid build, then the updates, apps and operations that keep it fast, functional and profitable.`,
+    whatWeDoBody: `${category.desc} ${clean} is where that starts. Launching or changing a Shopify store is only the beginning , what matters is keeping it optimised for performance, conversion and sustainable growth. I handle both sides: a solid build, then the updates, apps and operations that keep it fast, functional and profitable.`,
     pillars: uniquePillars.length === 4 ? uniquePillars : pillars,
     processTitle: `How ${clean} Is Delivered for Long-Term Success`,
     steps: pick(STEP_SETS, seed, 2),

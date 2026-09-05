@@ -85,7 +85,7 @@ function GlassNode({
       onFocus={onHover}
       onBlur={onLeave}
       onClick={onSelect}
-      aria-label={`${p.name} — ${p.badge}`}
+      aria-label={`${p.name} , ${p.badge}`}
       aria-pressed={isActive}
       className="group absolute -translate-x-1/2 -translate-y-1/2 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       style={{ left: cx, top: cy, width: size, height: size, willChange: "transform, opacity, filter" }}
@@ -297,7 +297,7 @@ export function EcommerceStack() {
           </p>
         </motion.div>
 
-        {/* constellation — desktop/tablet */}
+        {/* constellation , desktop/tablet */}
         <div className="relative mt-16 hidden md:block">
           <div className="relative mx-auto" style={{ width: W, height: H, maxWidth: "100%" }}>
             {/* connecting lines */}
@@ -436,7 +436,7 @@ export function EcommerceStack() {
           </AnimatePresence>
         </div>
 
-        {/* stats — clean typography, no cards */}
+        {/* stats , clean typography, no cards */}
         <div className="mt-20 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {STATS.map((s, i) => (
             <motion.div

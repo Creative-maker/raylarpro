@@ -18,10 +18,10 @@ export const Route = createFileRoute("/services/$slug")({
   },
   head: ({ loaderData, params }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Service not found — RaylarPro" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Service not found , RaylarPro" }, { name: "robots", content: "noindex" }] };
     }
     const s = loaderData.service;
-    const title = `${s.name} — ${s.categoryTitle} | RaylarPro`;
+    const title = `${s.name} , ${s.categoryTitle} | RaylarPro`;
     const desc = s.heroSub.slice(0, 155);
     const url = `https://raylarpro.lovable.app/services/${params.slug}`;
     return {
