@@ -68,7 +68,7 @@ async function resolveSiteUrl(): Promise<string> {
   return covering.siteUrl;
 }
 
-/** URLs inspected on every run — the high-value pages. */
+/** URLs inspected on every run , the high-value pages. */
 export const MONITORED_URLS = [
   `${SITE_ORIGIN}/`,
   `${SITE_ORIGIN}/services`,

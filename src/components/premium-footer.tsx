@@ -104,7 +104,7 @@ export function PremiumFooter() {
             </span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-base text-black/60 md:text-lg">
-            Book a free strategy call and let's turn your store into a conversion machine — designed, built, and optimized for growth.
+            Book a free strategy call and let's turn your store into a conversion machine , designed, built, and optimized for growth.
           </p>
           <a
             href={CALENDLY}

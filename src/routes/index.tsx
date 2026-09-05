@@ -21,9 +21,9 @@ import { StoreThumb } from "@/components/store-thumb";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "RaylarPro — Shopify Development Agency for Ambitious Brands" },
+      { title: "RaylarPro , Shopify Development Agency for Ambitious Brands" },
       { name: "description", content: "RaylarPro builds high-converting Shopify stores that grow faster, sell more, and scale better. Shopify Plus, CRO, headless commerce and store optimization." },
-      { property: "og:title", content: "RaylarPro — Shopify Development Agency for Ambitious Brands" },
+      { property: "og:title", content: "RaylarPro , Shopify Development Agency for Ambitious Brands" },
       { property: "og:description", content: "RaylarPro builds high-converting Shopify stores that grow faster, sell more, and scale better. Shopify Plus, CRO, headless commerce and store optimization." },
     ],
   }),
@@ -91,7 +91,7 @@ function Hero() {
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
             RaylarPro is a Shopify development studio helping ambitious brands ship
-            high‑converting stores — from custom themes to Shopify Plus, CRO and
+            high‑converting stores , from custom themes to Shopify Plus, CRO and
             headless commerce.
           </p>
 
@@ -122,7 +122,7 @@ function Hero() {
           </div>
         </motion.div>
 
-        {/* RIGHT — hero composition */}
+        {/* RIGHT , hero composition */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -201,7 +201,7 @@ function Hero() {
             <p className="mt-1.5 text-xs leading-snug text-foreground">
               “Sales jumped <b>+38%</b> in the first month after launch.”
             </p>
-            <div className="mt-2 text-[11px] font-semibold text-muted-foreground">— Marcus C., DTC Founder</div>
+            <div className="mt-2 text-[11px] font-semibold text-muted-foreground">, Marcus C., DTC Founder</div>
           </motion.div>
 
           {/* conversion pill */}

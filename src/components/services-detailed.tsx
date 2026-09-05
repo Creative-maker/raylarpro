@@ -18,14 +18,14 @@ type Detailed = {
 const DETAILED: Detailed[] = [
   {
     icon: Store,
-    eyebrow: "01 — Build",
+    eyebrow: "01 , Build",
     title: "Shopify Store Development",
     pitch:
-      "Launch a production-ready Shopify store engineered for speed, scale and sales — not just a pretty theme. Every store I ship is built on a conversion-first foundation so you can start selling from day one.",
+      "Launch a production-ready Shopify store engineered for speed, scale and sales , not just a pretty theme. Every store I ship is built on a conversion-first foundation so you can start selling from day one.",
     outcomes: [
       "Go live in 2–4 weeks with a store that looks premium on every device",
       "Cleaner code and a faster theme mean better Core Web Vitals and lower ad costs",
-      "Structured for scale — add products, markets and apps without breaking things",
+      "Structured for scale , add products, markets and apps without breaking things",
     ],
     deliverables: [
       "New Shopify & Shopify Plus store setup",
@@ -41,10 +41,10 @@ const DETAILED: Detailed[] = [
   },
   {
     icon: TrendingUp,
-    eyebrow: "02 — Optimize",
+    eyebrow: "02 , Optimize",
     title: "Store Optimization & CRO",
     pitch:
-      "Traffic without conversions is expensive. I audit your store, find the friction, and rebuild the pages that matter — product, cart and checkout — so more of your existing visitors actually buy.",
+      "Traffic without conversions is expensive. I audit your store, find the friction, and rebuild the pages that matter , product, cart and checkout , so more of your existing visitors actually buy.",
     outcomes: [
       "Lift conversion rate by 20–60% on average within the first 90 days",
       "Cut Largest Contentful Paint under 2.5s for better SEO and ad quality scores",
@@ -64,7 +64,7 @@ const DETAILED: Detailed[] = [
   },
   {
     icon: Mail,
-    eyebrow: "03 — Retain",
+    eyebrow: "03 , Retain",
     title: "Email Marketing & Retention",
     pitch:
       "Your list is the highest-ROI channel you own. I build Klaviyo email & SMS systems that recover carts, resurrect churned buyers and turn one-time shoppers into loyal repeat customers.",
@@ -87,7 +87,7 @@ const DETAILED: Detailed[] = [
   },
   {
     icon: Zap,
-    eyebrow: "04 — Automate",
+    eyebrow: "04 , Automate",
     title: "Integrations & Automation",
     pitch:
       "Stop copy-pasting orders into spreadsheets. I connect your store to the apps and tools your team actually uses, then automate the repetitive work so you can focus on growth.",
@@ -110,10 +110,10 @@ const DETAILED: Detailed[] = [
   },
   {
     icon: BarChart3,
-    eyebrow: "05 — Measure",
+    eyebrow: "05 , Measure",
     title: "Analytics & SEO",
     pitch:
-      "You can’t grow what you can’t measure. I set up bulletproof tracking and technical SEO so every marketing dollar is attributable — and free organic traffic becomes a real channel.",
+      "You can’t grow what you can’t measure. I set up bulletproof tracking and technical SEO so every marketing dollar is attributable , and free organic traffic becomes a real channel.",
     outcomes: [
       "Accurate revenue attribution across Meta, Google & TikTok",
       "Rank on page 1 for high-intent product & collection queries",
@@ -133,10 +133,10 @@ const DETAILED: Detailed[] = [
   },
   {
     icon: Shield,
-    eyebrow: "06 — Grow",
+    eyebrow: "06 , Grow",
     title: "Growth & Maintenance",
     pitch:
-      "Shopify stores decay without love. I keep your store fast, secure and continuously improving — with a monthly roadmap of upgrades, experiments and fixes so revenue keeps compounding.",
+      "Shopify stores decay without love. I keep your store fast, secure and continuously improving , with a monthly roadmap of upgrades, experiments and fixes so revenue keeps compounding.",
     outcomes: [
       "Zero unplanned downtime and always up-to-date apps & themes",
       "A continuous pipeline of CRO experiments and small wins",
@@ -174,7 +174,7 @@ export function ServicesDetailed() {
             Every Service, <span className="text-primary">Unpacked</span>
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            Exactly what you get, the outcomes you can expect and who each package is built for — no
+            Exactly what you get, the outcomes you can expect and who each package is built for , no
             fluff, no surprises.
           </p>
         </div>

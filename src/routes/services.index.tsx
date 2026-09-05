@@ -11,9 +11,9 @@ import { useState } from "react";
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Services — Shopify Store Setup, CRO & SEO | RaylarPro" },
+      { title: "Services , Shopify Store Setup, CRO & SEO | RaylarPro" },
       { name: "description", content: "Shopify store setup, redesign, CRO, technical SEO, speed optimization, Klaviyo email flows, and app integrations by RaylarPro." },
-      { property: "og:title", content: "Services — RaylarPro" },
+      { property: "og:title", content: "Services , RaylarPro" },
       { property: "og:description", content: "Everything you need to launch, optimize, and grow your Shopify store." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -29,7 +29,7 @@ function ServicesPage() {
       <PageHero
         eyebrow="What I Do"
         title="Services Built to Grow Shopify Stores"
-        sub="From new-store launches to full redesigns and ongoing growth work — pick the package that fits where you are today."
+        sub="From new-store launches to full redesigns and ongoing growth work , pick the package that fits where you are today."
       />
       <ServicesGrid />
       <ServicesAccordion />

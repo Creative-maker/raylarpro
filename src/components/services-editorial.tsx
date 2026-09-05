@@ -6,7 +6,7 @@ import { SERVICE_CATEGORIES } from "@/components/services-catalog";
 
 
 /* ------------------------------------------------------------------ */
-/* Miniature SaaS UI illustrations (pure CSS/SVG — no image payload)   */
+/* Miniature SaaS UI illustrations (pure CSS/SVG , no image payload)   */
 /* ------------------------------------------------------------------ */
 
 function Frame({ children, label }: { children: ReactNode; label?: string }) {

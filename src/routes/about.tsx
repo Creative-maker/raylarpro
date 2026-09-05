@@ -7,7 +7,7 @@ import { CERTS, WHATSAPP, CALENDLY } from "@/components/site-data";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Yusuff Rasheed — RaylarPro Shopify Specialist" },
+      { title: "About Yusuff Rasheed , RaylarPro Shopify Specialist" },
       { name: "description", content: "Meet Yusuff Rasheed, the Shopify Specialist behind RaylarPro. 500+ stores built, certified in CRO, SEO and Klaviyo email marketing." },
       { property: "og:title", content: "About RaylarPro" },
       { property: "og:description", content: "The Shopify Specialist behind 500+ stores built for real growth." },

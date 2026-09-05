@@ -65,7 +65,7 @@ export function AuditForm({ serviceSlug, serviceName }: Props) {
           </span>
           <h3 className="mt-5 text-2xl font-black tracking-tight">Request received</h3>
           <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
-            Thanks {values.name.split(" ")[0]} — your free {serviceName.toLowerCase()} audit request is in. I'll review
+            Thanks {values.name.split(" ")[0]} , your free {serviceName.toLowerCase()} audit request is in. I'll review
             your store and reply to <span className="font-semibold text-foreground">{values.email}</span> within one
             business day.
           </p>
@@ -88,7 +88,7 @@ export function AuditForm({ serviceSlug, serviceName }: Props) {
               Get a free audit for {serviceName}
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Tell me about your store and I'll send back a prioritised list of fixes — no cost, no obligation.
+              Tell me about your store and I'll send back a prioritised list of fixes , no cost, no obligation.
             </p>
           </div>
 

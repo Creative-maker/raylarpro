@@ -9,7 +9,7 @@ const GROUPS: { key: string; label: string; icon: typeof Sparkles; faqs: QA[] }[
     label: "Services",
     icon: Sparkles,
     faqs: [
-      { q: "Which Shopify services do you actually offer?", a: "Seven categories: Shopify development, store optimisation & CRO, SEO & AI search, paid growth (SEM), email & SMS marketing, integrations & AI automation, and growth consultancy — 42 individual services in total, each with its own page." },
+      { q: "Which Shopify services do you actually offer?", a: "Seven categories: Shopify development, store optimisation & CRO, SEO & AI search, paid growth (SEM), email & SMS marketing, integrations & AI automation, and growth consultancy , 42 individual services in total, each with its own page." },
       { q: "Can I book a single service or do I need a package?", a: "Single services are fine. Most brands start with one clearly scoped piece of work, see the result, then expand. There is no minimum retainer." },
       { q: "How quickly can you start?", a: "Discovery calls are usually available within 48 hours, and build slots typically open within one to two weeks. Urgent fixes and troubleshooting can often be picked up same week." },
       { q: "Do you work with brands outside the UK?", a: "Yes. I work with merchants across the UK, EU, US and Africa, with overlapping hours arranged at kickoff so communication never stalls." },
@@ -32,9 +32,9 @@ const GROUPS: { key: string; label: string; icon: typeof Sparkles; faqs: QA[] }[
     icon: ShoppingBag,
     faqs: [
       { q: "Which platforms and tools do you build on?", a: "Shopify and Shopify Plus first, with Liquid, headless Hydrogen, Klaviyo, Google Ads, GA4, Shopify Flow and the main CRM/ERP integrations around it." },
-      { q: "Do you build custom Shopify apps?", a: "Yes — private and public apps, custom checkout extensions and API integrations where an off-the-shelf app cannot do the job or costs more than it returns." },
+      { q: "Do you build custom Shopify apps?", a: "Yes , private and public apps, custom checkout extensions and API integrations where an off-the-shelf app cannot do the job or costs more than it returns." },
       { q: "Will I own everything you build?", a: "Completely. Code, theme files, accounts, documentation and assets are yours, transferred at handover with nothing held hostage." },
-      { q: "Can you migrate my store from another platform?", a: "Yes. WooCommerce, Magento, BigCommerce, Wix and custom builds — products, customers, orders, content and SEO redirects all transfer with a validation report." },
+      { q: "Can you migrate my store from another platform?", a: "Yes. WooCommerce, Magento, BigCommerce, Wix and custom builds , products, customers, orders, content and SEO redirects all transfer with a validation report." },
     ],
   },
   {
@@ -44,7 +44,7 @@ const GROUPS: { key: string; label: string; icon: typeof Sparkles; faqs: QA[] }[
     faqs: [
       { q: "What is your guarantee?", a: "If a delivered item does not match the written scope we agreed, it is fixed at no additional cost. Scope is agreed in writing before work starts, so there is never a dispute about what was promised." },
       { q: "What if the results do not land?", a: "Baselines are recorded before work begins. If a change underperforms, it is rolled back or iterated within the engagement rather than left in place and reported as a win." },
-      { q: "How do payments work?", a: "Milestone based — typically 50% to reserve the slot and 50% on delivery. Larger builds are split across monthly milestones. No hidden fees or surprise change orders." },
+      { q: "How do payments work?", a: "Milestone based , typically 50% to reserve the slot and 50% on delivery. Larger builds are split across monthly milestones. No hidden fees or surprise change orders." },
       { q: "What support do I get after launch?", a: "30 days of post-launch support is included with every project, covering bug fixes and questions. Optional monthly care plans are available afterwards, cancellable any time." },
     ],
   },
@@ -66,7 +66,7 @@ export function FooterFaq() {
             Answers Before You <span className="text-[#16A34A]">Ask</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm text-black/60 md:text-base">
-            Services, trust, products and guarantees — the questions merchants ask most, answered plainly.
+            Services, trust, products and guarantees , the questions merchants ask most, answered plainly.
           </p>
         </div>
 

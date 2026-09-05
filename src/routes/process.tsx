@@ -10,7 +10,7 @@ const STEPS = [
     icon: Search,
     title: "Discovery & Store Audit",
     duration: "Days 1–3",
-    desc: "I start with a full technical and conversion audit of your store — speed, checkout friction, product pages, trust signals, SEO and analytics. You get a written report with the exact revenue leaks I find.",
+    desc: "I start with a full technical and conversion audit of your store , speed, checkout friction, product pages, trust signals, SEO and analytics. You get a written report with the exact revenue leaks I find.",
     points: ["Kick-off call & goal setting", "Full 40-point store audit", "Competitor & benchmark review", "Prioritised opportunity list"],
   },
   {
@@ -24,7 +24,7 @@ const STEPS = [
     icon: Code2,
     title: "Design & Build",
     duration: "Weeks 2–4",
-    desc: "Theme development, custom sections, app integrations and performance work — built cleanly on your live theme's duplicate so your store keeps selling while we work.",
+    desc: "Theme development, custom sections, app integrations and performance work , built cleanly on your live theme's duplicate so your store keeps selling while we work.",
     points: ["Conversion-first UI design", "Custom Liquid sections", "App & integration setup", "Mobile-first performance budget"],
   },
   {
@@ -45,7 +45,7 @@ const STEPS = [
     icon: LifeBuoy,
     title: "Support & Partnership",
     duration: "Always on",
-    desc: "You get a direct line for fixes, questions and new ideas — no ticket queues. Most clients stay on a retainer because the work keeps paying for itself.",
+    desc: "You get a direct line for fixes, questions and new ideas , no ticket queues. Most clients stay on a retainer because the work keeps paying for itself.",
     points: ["Direct WhatsApp / email access", "Priority bug fixes", "Quarterly growth reviews", "Roadmap for the next quarter"],
   },
 ];
@@ -53,13 +53,13 @@ const STEPS = [
 export const Route = createFileRoute("/process")({
   head: () => ({
     meta: [
-      { title: "My Work Process — How RaylarPro Delivers Shopify Growth" },
+      { title: "My Work Process , How RaylarPro Delivers Shopify Growth" },
       {
         name: "description",
         content:
           "A transparent six-stage Shopify workflow: discovery audit, strategy roadmap, design and build, QA and launch, optimisation, and ongoing partnership.",
       },
-      { property: "og:title", content: "My Work Process — RaylarPro" },
+      { property: "og:title", content: "My Work Process , RaylarPro" },
       { property: "og:description", content: "The six-stage workflow behind every Shopify project I deliver." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://raylarpro.lovable.app/process" },
@@ -93,7 +93,7 @@ function ProcessPage() {
       <PageHero
         eyebrow="My Work Process"
         title="How Great Shopify Stores Actually Get Built"
-        sub="A transparent, six-stage workflow — so you always know what is happening, what comes next, and how it moves revenue."
+        sub="A transparent, six-stage workflow , so you always know what is happening, what comes next, and how it moves revenue."
       />
 
       <section className="py-16 md:py-24">
@@ -145,7 +145,7 @@ function ProcessPage() {
           <div className="mt-14 rounded-3xl bg-surface p-8 text-center ring-1 ring-border md:p-12">
             <h2 className="text-2xl font-extrabold tracking-tight md:text-3xl">Ready to start at stage one?</h2>
             <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-              Every project begins with a free store audit. No obligation — you keep the report either way.
+              Every project begins with a free store audit. No obligation , you keep the report either way.
             </p>
             <Link
               to="/contact"
