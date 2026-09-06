@@ -11,9 +11,9 @@ export const Route = createFileRoute("/blog")({
       { name: "description", content: "Practical Shopify guides on CRO, SEO, speed, Klaviyo email flows, and product page design , from RaylarPro." },
       { property: "og:title", content: "Blog & Resources , RaylarPro" },
       { property: "og:description", content: "Guides and playbooks for growing your Shopify store." },
-      { property: "og:url", content: "/blog" },
+      { property: "og:url", content: "https://www.raylarpro.com/blog" },
     ],
-    links: [{ rel: "canonical", href: "/blog" }],
+    links: [{ rel: "canonical", href: "https://www.raylarpro.com/blog" }],
   }),
   component: BlogPage,
 });
