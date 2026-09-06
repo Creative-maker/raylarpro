@@ -4,7 +4,7 @@ import { POSTS } from "@/components/site-data";
 import { CASE_STUDIES } from "@/components/case-study-data";
 import { SERVICE_PAGES } from "@/components/service-page-data";
 
-const BASE_URL = "https://raylarpro.lovable.app";
+const BASE_URL = "https://www.raylarpro.com";
 
 interface SitemapEntry {
   path: string;

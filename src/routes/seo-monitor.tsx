@@ -9,11 +9,11 @@ export const Route = createFileRoute("/seo-monitor")({
   head: () => ({
     meta: [
       { title: "SEO Monitor , RaylarPro" },
-      { name: "description", content: "Internal dashboard tracking Search Console crawl and indexing health for raylarpro.lovable.app." },
+      { name: "description", content: "Internal dashboard tracking Search Console crawl and indexing health for www.raylarpro.com." },
       { name: "robots", content: "noindex, nofollow" },
       { property: "og:title", content: "SEO Monitor , RaylarPro" },
       { property: "og:description", content: "Search Console crawl and indexing health dashboard." },
-      { property: "og:url", content: "https://raylarpro.lovable.app/seo-monitor" },
+      { property: "og:url", content: "https://www.raylarpro.com/seo-monitor" },
     ],
   }),
   component: SeoMonitorPage,

@@ -3,7 +3,7 @@ import { POSTS } from "@/components/site-data";
 import { CASE_STUDIES } from "@/components/case-study-data";
 import { SERVICE_PAGES } from "@/components/service-page-data";
 
-const HOST = "raylarpro.lovable.app";
+const HOST = "www.raylarpro.com";
 const ORIGIN = `https://${HOST}`;
 const INDEXNOW_KEY = "6e09981f41f8b035fc89c64ff65d33f9";
 
