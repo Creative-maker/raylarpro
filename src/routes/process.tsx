@@ -62,10 +62,10 @@ export const Route = createFileRoute("/process")({
       { property: "og:title", content: "My Work Process , RaylarPro" },
       { property: "og:description", content: "The six-stage workflow behind every Shopify project I deliver." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://raylarpro.lovable.app/process" },
+      { property: "og:url", content: "https://www.raylarpro.com/process" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://raylarpro.lovable.app/process" }],
+    links: [{ rel: "canonical", href: "https://www.raylarpro.com/process" }],
     scripts: [
       {
         type: "application/ld+json",

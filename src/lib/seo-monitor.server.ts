@@ -4,7 +4,7 @@
  */
 
 const GATEWAY = "https://connector-gateway.lovable.dev/google_search_console";
-export const SITE_ORIGIN = "https://raylarpro.lovable.app";
+export const SITE_ORIGIN = "https://www.raylarpro.com";
 export const SITEMAP_URL = `${SITE_ORIGIN}/sitemap.xml`;
 export const ALERT_EMAIL = "raylarpro@gmail.com";
 
@@ -223,7 +223,7 @@ export async function sendAlertEmail(run: SeoRun): Promise<boolean> {
       body: JSON.stringify({
         from: "RaylarPro SEO Monitor <onboarding@resend.dev>",
         to: [ALERT_EMAIL],
-        subject: `SEO alert: ${run.issues.length} issue(s) on raylarpro.lovable.app`,
+        subject: `SEO alert: ${run.issues.length} issue(s) on www.raylarpro.com`,
         html: `<h2>SEO Monitor Alert</h2><p>${run.summary}</p><table style="border-collapse:collapse;font-family:sans-serif;font-size:14px">${rows}</table><p><a href="${SITE_ORIGIN}/seo-monitor">Open the SEO monitor</a></p>`,
       }),
     });
@@ -262,6 +262,6 @@ export async function sendNewIssuesAlert(run: SeoRun): Promise<boolean> {
   return sendAlertEmail({
     ...run,
     issues: newIssues,
-    summary: `${newIssues.length} new SEO issue(s) detected on raylarpro.lovable.app.`,
+    summary: `${newIssues.length} new SEO issue(s) detected on www.raylarpro.com.`,
   });
 }

@@ -23,7 +23,7 @@ export const Route = createFileRoute("/services/$slug")({
     const s = loaderData.service;
     const title = `${s.name} , ${s.categoryTitle} | RaylarPro`;
     const desc = s.heroSub.slice(0, 155);
-    const url = `https://raylarpro.lovable.app/services/${params.slug}`;
+    const url = `https://www.raylarpro.com/services/${params.slug}`;
     return {
       meta: [
         { title },
@@ -45,7 +45,7 @@ export const Route = createFileRoute("/services/$slug")({
             serviceType: s.categoryTitle,
             description: desc,
             url,
-            provider: { "@id": "https://raylarpro.lovable.app/#organization" },
+            provider: { "@id": "https://www.raylarpro.com/#organization" },
             areaServed: "Worldwide",
           }),
         },
@@ -55,8 +55,8 @@ export const Route = createFileRoute("/services/$slug")({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://raylarpro.lovable.app/" },
-              { "@type": "ListItem", position: 2, name: "Services", item: "https://raylarpro.lovable.app/services" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.raylarpro.com/" },
+              { "@type": "ListItem", position: 2, name: "Services", item: "https://www.raylarpro.com/services" },
               { "@type": "ListItem", position: 3, name: s.name, item: url },
             ],
           }),

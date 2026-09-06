@@ -112,10 +112,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          "@id": "https://raylarpro.lovable.app/#organization",
+          "@id": "https://www.raylarpro.com/#organization",
           name: "RaylarPro",
-          url: "https://raylarpro.lovable.app",
-          logo: "https://raylarpro.lovable.app/favicon.png",
+          url: "https://www.raylarpro.com",
+          logo: "https://www.raylarpro.com/favicon.png",
           description:
             "RaylarPro builds high-converting Shopify stores that grow faster, sell more, and scale better.",
           areaServed: "Worldwide",
@@ -136,15 +136,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          "@id": "https://raylarpro.lovable.app/#website",
+          "@id": "https://www.raylarpro.com/#website",
           name: "RaylarPro",
-          url: "https://raylarpro.lovable.app",
-          publisher: { "@id": "https://raylarpro.lovable.app/#organization" },
+          url: "https://www.raylarpro.com",
+          publisher: { "@id": "https://www.raylarpro.com/#organization" },
           potentialAction: {
             "@type": "SearchAction",
             target: {
               "@type": "EntryPoint",
-              urlTemplate: "https://raylarpro.lovable.app/blog?q={search_term_string}",
+              urlTemplate: "https://www.raylarpro.com/blog?q={search_term_string}",
             },
             "query-input": "required name=search_term_string",
           },

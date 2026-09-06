@@ -28,7 +28,7 @@ export const runStoreAudit = createServerFn({ method: "POST" })
         redirect: "follow",
         headers: {
           "user-agent":
-            "Mozilla/5.0 (compatible; RaylarProAuditBot/1.0; +https://raylarpro.lovable.app)",
+            "Mozilla/5.0 (compatible; RaylarProAuditBot/1.0; +https://www.raylarpro.com)",
           accept: "text/html,application/xhtml+xml",
         },
         signal: AbortSignal.timeout(15000),

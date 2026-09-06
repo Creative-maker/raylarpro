@@ -240,7 +240,7 @@ export function IntentPopup() {
       ``,
       result.platformNote,
       `This is a quick automated assessment based on publicly accessible information from your storefront.`,
-      `Prepared by RaylarPro , raylarpro.lovable.app`,
+      `Prepared by RaylarPro , www.raylarpro.com`,
     ];
     const blob = new Blob([lines.join("\n")], { type: "text/plain;charset=utf-8" });
     const url = URL.createObjectURL(blob);
