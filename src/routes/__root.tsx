@@ -95,6 +95,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "RaylarPro , Shopify Development Agency for Ambitious Brands" },
       { name: "twitter:description", content: "RaylarPro builds high-converting Shopify stores that grow faster, sell more, and scale better. Shopify Plus, CRO, headless commerce and store optimization." },
       { name: "google-site-verification", content: "ScvF5gcNECRohdft_G6hqc3ZuN81dMUr3IPtxpMWgLQ" },
+      { name: "google-site-verification", content: "4QrqcHi_HS_AMfazY6kumcSQ2_ab8rqlYgIC6uTLWro" },
+
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fec4a0f6-7f81-4bc9-b180-543a4dca15d0/id-preview-42dafd70--f8b5b33b-845f-43bb-a652-423874be2f26.lovable.app-1783735684665.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fec4a0f6-7f81-4bc9-b180-543a4dca15d0/id-preview-42dafd70--f8b5b33b-845f-43bb-a652-423874be2f26.lovable.app-1783735684665.png" },
     ],
