@@ -12,6 +12,22 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Get in touch with RaylarPro. Email, phone, WhatsApp, or book a free call to discuss your Shopify store project." },
       { property: "og:title", content: "Contact RaylarPro" },
       { property: "og:description", content: "Let's talk about your Shopify store." },
+      { property: "og:url", content: "https://www.raylarpro.com/contact" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "https://www.raylarpro.com/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          url: "https://www.raylarpro.com/contact",
+          name: "Contact RaylarPro",
+          isPartOf: { "@type": "WebSite", name: "RaylarPro", url: "https://www.raylarpro.com/" },
+        }),
+      },
     ],
   }),
   component: ContactPage,

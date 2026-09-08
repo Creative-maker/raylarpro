@@ -16,7 +16,22 @@ export const Route = createFileRoute("/services/")({
       { property: "og:title", content: "Services , RaylarPro" },
       { property: "og:description", content: "Everything you need to launch, optimize, and grow your Shopify store." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://www.raylarpro.com/services" },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "https://www.raylarpro.com/services" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          url: "https://www.raylarpro.com/services",
+          name: "Services , Shopify Store Setup, CRO & SEO | RaylarPro",
+          description: "Shopify services by RaylarPro: store setup, redesign, CRO, SEO, speed and email marketing.",
+          isPartOf: { "@type": "WebSite", name: "RaylarPro", url: "https://www.raylarpro.com/" },
+        }),
+      },
     ],
   }),
   component: ServicesPage,

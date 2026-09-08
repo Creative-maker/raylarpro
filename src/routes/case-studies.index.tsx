@@ -13,7 +13,22 @@ export const Route = createFileRoute("/case-studies/")({
       { property: "og:title", content: "Case Studies , RaylarPro" },
       { property: "og:description", content: "A showcase of Shopify stores built for real growth." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://www.raylarpro.com/case-studies" },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "https://www.raylarpro.com/case-studies" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          url: "https://www.raylarpro.com/case-studies",
+          name: "Case Studies , Shopify Stores by RaylarPro",
+          description: "Shopify stores designed, built and optimized by RaylarPro.",
+          isPartOf: { "@type": "WebSite", name: "RaylarPro", url: "https://www.raylarpro.com/" },
+        }),
+      },
     ],
   }),
   component: CaseStudiesPage,
