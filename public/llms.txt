@@ -1,0 +1,38 @@
+# RaylarPro
+
+> RaylarPro is a UK-based Shopify Specialist and eCommerce Growth Consultant. Shopify store builds, conversion rate optimization, SEO and AI search, paid growth, Klaviyo email and SMS, and integrations for brands that want more sales.
+
+RaylarPro helps Shopify merchants design, build, and grow their online stores. Work covers custom Shopify theme development, store setup and migration, speed optimization, conversion rate optimization, technical SEO, Google and Meta ads, Klaviyo email automation, and app and AI integrations. RaylarPro has worked on 40+ Shopify stores across fashion, beauty, home, electronics, automotive, and sport in the UK, US, and Europe. Book a free strategy call at https://calendly.com/raylarpro or request a free Shopify store audit on the website.
+
+## Pages
+
+- [Home](https://www.raylarpro.com/): Overview of RaylarPro, services, stack, and featured work.
+- [Services](https://www.raylarpro.com/services): Full catalog of Shopify development and growth services.
+- [About](https://www.raylarpro.com/about): Background, experience, and certifications.
+- [Process](https://www.raylarpro.com/process): The six-stage workflow from discovery to growth.
+- [Case Studies](https://www.raylarpro.com/case-studies): Shopify stores RaylarPro has worked on.
+- [Blog](https://www.raylarpro.com/blog): Practical Shopify growth guides.
+- [Contact](https://www.raylarpro.com/contact): Get in touch or book a call.
+
+## Services
+
+- [Shopify Development](https://www.raylarpro.com/services#shopify-development): Store setup, custom themes, migrations, and speed.
+- [Store Optimization & CRO](https://www.raylarpro.com/services#store-optimization-cro): Conversion rate improvements and UX.
+- [SEO & AI Search Optimization](https://www.raylarpro.com/services#seo-ai-search): Technical and on-page SEO for Shopify.
+- [SEM & Paid Growth](https://www.raylarpro.com/services#sem-paid-growth): Google and Meta ads management.
+- [Email & SMS Marketing](https://www.raylarpro.com/services#email-sms-marketing): Klaviyo flows and campaigns.
+- [Integrations & AI Automation](https://www.raylarpro.com/services#integrations-ai-automation): Apps, APIs, and automation.
+- [Shopify Growth Consultancy](https://www.raylarpro.com/services#growth-consultancy): Strategy and ongoing growth advice.
+
+## Blog
+
+- [Shopify Conversion Checklist](https://www.raylarpro.com/blog/shopify-conversion-checklist): Fixes that lift Shopify conversion rates.
+- [Klaviyo Flows That Print Money](https://www.raylarpro.com/blog/klaviyo-flows-that-print-money): Five automated email flows every store needs.
+- [Shopify Speed Optimization](https://www.raylarpro.com/blog/shopify-speed-optimization): Making a Shopify store load faster.
+- [A Product Page That Sells](https://www.raylarpro.com/blog/product-page-that-sells): Anatomy of a high-converting product page.
+- [SEO for Shopify Stores](https://www.raylarpro.com/blog/seo-for-shopify-stores): Ranking a Shopify store on Google.
+- [Shopify vs WooCommerce](https://www.raylarpro.com/blog/shopify-vs-woocommerce): Choosing the right platform.
+
+## Optional
+
+- [Sitemap](https://www.raylarpro.com/sitemap.xml): Every public URL on the site.
