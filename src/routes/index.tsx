@@ -15,6 +15,7 @@ import { EcommerceStack } from "@/components/ecommerce-stack";
 import { ServicesEditorial } from "@/components/services-editorial";
 import { CASE_STUDIES } from "@/components/case-study-data";
 import { StoreThumb } from "@/components/store-thumb";
+import { StoreRecommendations } from "@/components/store-recommendations";
 
 
 
@@ -61,6 +62,7 @@ function HomePage() {
       <EcommerceStack />
       <ProjectsPreview />
       <FreeTool />
+      <StoreRecommendations />
       <CTA />
     </>
   );

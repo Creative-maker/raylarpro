@@ -24,6 +24,7 @@ import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies.inde
 import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies.$slug'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
+import { Route as ApiPublicStoreRecommendationsRouteImport } from './routes/api/public/store-recommendations'
 import { Route as ApiPublicHooksIndexnowRouteImport } from './routes/api/public/hooks/indexnow'
 import { Route as ApiPublicHooksSeoMonitorRouteImport } from './routes/api/public/hooks/seo-monitor'
 
@@ -102,6 +103,12 @@ const ServicesSlugRoute = ServicesSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => ServicesRoute,
 } as any)
+const ApiPublicStoreRecommendationsRoute =
+  ApiPublicStoreRecommendationsRouteImport.update({
+    id: '/api/public/store-recommendations',
+    path: '/api/public/store-recommendations',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiPublicHooksIndexnowRoute = ApiPublicHooksIndexnowRouteImport.update({
   id: '/api/public/hooks/indexnow',
   path: '/api/public/hooks/indexnow',
@@ -130,6 +137,7 @@ export interface FileRoutesByFullPath {
   '/blog/': typeof BlogIndexRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/api/public/store-recommendations': typeof ApiPublicStoreRecommendationsRoute
   '/api/public/hooks/indexnow': typeof ApiPublicHooksIndexnowRoute
   '/api/public/hooks/seo-monitor': typeof ApiPublicHooksSeoMonitorRoute
 }
@@ -146,6 +154,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogIndexRoute
   '/case-studies': typeof CaseStudiesIndexRoute
   '/services': typeof ServicesIndexRoute
+  '/api/public/store-recommendations': typeof ApiPublicStoreRecommendationsRoute
   '/api/public/hooks/indexnow': typeof ApiPublicHooksIndexnowRoute
   '/api/public/hooks/seo-monitor': typeof ApiPublicHooksSeoMonitorRoute
 }
@@ -166,6 +175,7 @@ export interface FileRoutesById {
   '/blog/': typeof BlogIndexRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/api/public/store-recommendations': typeof ApiPublicStoreRecommendationsRoute
   '/api/public/hooks/indexnow': typeof ApiPublicHooksIndexnowRoute
   '/api/public/hooks/seo-monitor': typeof ApiPublicHooksSeoMonitorRoute
 }
@@ -187,6 +197,7 @@ export interface FileRouteTypes {
     | '/blog/'
     | '/case-studies/'
     | '/services/'
+    | '/api/public/store-recommendations'
     | '/api/public/hooks/indexnow'
     | '/api/public/hooks/seo-monitor'
   fileRoutesByTo: FileRoutesByTo
@@ -203,6 +214,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/case-studies'
     | '/services'
+    | '/api/public/store-recommendations'
     | '/api/public/hooks/indexnow'
     | '/api/public/hooks/seo-monitor'
   id:
@@ -222,6 +234,7 @@ export interface FileRouteTypes {
     | '/blog/'
     | '/case-studies/'
     | '/services/'
+    | '/api/public/store-recommendations'
     | '/api/public/hooks/indexnow'
     | '/api/public/hooks/seo-monitor'
   fileRoutesById: FileRoutesById
@@ -236,6 +249,7 @@ export interface RootRouteChildren {
   SeoMonitorRoute: typeof SeoMonitorRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ApiPublicStoreRecommendationsRoute: typeof ApiPublicStoreRecommendationsRoute
   ApiPublicHooksIndexnowRoute: typeof ApiPublicHooksIndexnowRoute
   ApiPublicHooksSeoMonitorRoute: typeof ApiPublicHooksSeoMonitorRoute
 }
@@ -347,6 +361,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesSlugRouteImport
       parentRoute: typeof ServicesRoute
     }
+    '/api/public/store-recommendations': {
+      id: '/api/public/store-recommendations'
+      path: '/api/public/store-recommendations'
+      fullPath: '/api/public/store-recommendations'
+      preLoaderRoute: typeof ApiPublicStoreRecommendationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/hooks/indexnow': {
       id: '/api/public/hooks/indexnow'
       path: '/api/public/hooks/indexnow'
@@ -414,6 +435,7 @@ const rootRouteChildren: RootRouteChildren = {
   SeoMonitorRoute: SeoMonitorRoute,
   ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ApiPublicStoreRecommendationsRoute: ApiPublicStoreRecommendationsRoute,
   ApiPublicHooksIndexnowRoute: ApiPublicHooksIndexnowRoute,
   ApiPublicHooksSeoMonitorRoute: ApiPublicHooksSeoMonitorRoute,
 }
