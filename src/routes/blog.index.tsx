@@ -12,6 +12,8 @@ export const Route = createFileRoute("/blog/")({
       { property: "og:title", content: "Blog & Resources , RaylarPro" },
       { property: "og:description", content: "Guides and playbooks for growing your Shopify store." },
       { property: "og:url", content: "https://www.raylarpro.com/blog" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://www.raylarpro.com/blog" }],
   }),

@@ -14,6 +14,8 @@ export const Route = createFileRoute("/seo-monitor")({
       { property: "og:title", content: "SEO Monitor , RaylarPro" },
       { property: "og:description", content: "Search Console crawl and indexing health dashboard." },
       { property: "og:url", content: "https://www.raylarpro.com/seo-monitor" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: SeoMonitorPage,
