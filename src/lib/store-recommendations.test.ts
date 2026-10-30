@@ -1,4 +1,4 @@
-import { describe, expect, test } from "bun:test";
+import { describe, expect, test } from "vitest";
 import { storeRecommendationInput } from "./store-recommendations";
 
 describe("merchant recommendation validation", () => {
