@@ -127,6 +127,7 @@ export type Post = {
   intro: string;
   sections: { heading: string; body: string[]; list?: string[] }[];
   takeaway: string;
+  sources?: { label: string; url: string }[];
 };
 
 export const POSTS: Post[] = [
