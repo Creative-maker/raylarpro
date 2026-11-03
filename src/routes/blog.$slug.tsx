@@ -120,6 +120,21 @@ function PostPage() {
             <p className="mt-2 text-lg font-medium text-foreground">{post.takeaway}</p>
           </div>
 
+          {post.sources && post.sources.length > 0 && (
+            <section className="mt-10 border-t border-border pt-8" aria-labelledby="article-sources">
+              <h2 id="article-sources" className="text-2xl font-extrabold">Sources and further reading</h2>
+              <ul className="mt-4 space-y-3">
+                {post.sources.map((source) => (
+                  <li key={source.url}>
+                    <a href={source.url} target="_blank" rel="noreferrer" className="font-medium text-primary underline underline-offset-4 break-words hover:text-foreground">
+                      {source.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
           {/* CTA */}
           <div className="mt-12 rounded-2xl bg-card p-6 ring-1 ring-border md:p-8">
             <h3 className="text-xl font-extrabold tracking-tight md:text-2xl">Want this applied to your store?</h3>

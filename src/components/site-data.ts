@@ -127,6 +127,7 @@ export type Post = {
   intro: string;
   sections: { heading: string; body: string[]; list?: string[] }[];
   takeaway: string;
+  sources?: { label: string; url: string }[];
 };
 
 export const POSTS: Post[] = [
@@ -231,7 +232,17 @@ export const POSTS: Post[] = [
         ]
       }
     ],
-    "takeaway": "Start with an observed customer problem, make a focused change, and measure both purchases and profitability. Clear information and reliable buying journeys matter more than copying another store’s tactics."
+    "takeaway": "Start with an observed customer problem, make a focused change, and measure both purchases and profitability. Clear information and reliable buying journeys matter more than copying another store’s tactics.",
+    "sources": [
+      {
+        "label": "Shopify: Improving storefront performance",
+        "url": "https://help.shopify.com/en/manual/online-store/web-performance/improving-web-performance"
+      },
+      {
+        "label": "Shopify: Product details",
+        "url": "https://help.shopify.com/en/manual/products/details"
+      }
+    ]
   },
   {
     "slug": "klaviyo-flows-that-print-money",
@@ -317,7 +328,41 @@ export const POSTS: Post[] = [
         ]
       }
     ],
-    "takeaway": "Build the flows around genuine customer needs, verify eligibility and exclusions, and test every branch. Measure incremental value and customer experience rather than assuming every attributed order was caused by an email."
+    "takeaway": "Build the flows around genuine customer needs, verify eligibility and exclusions, and test every branch. Measure incremental value and customer experience rather than assuming every attributed order was caused by an email.",
+    "sources": [
+      {
+        "label": "Klaviyo: Welcome flow fundamentals",
+        "url": "https://help.klaviyo.com/hc/en-us/articles/115002774932"
+      },
+      {
+        "label": "Klaviyo: Browse abandonment",
+        "url": "https://help.klaviyo.com/hc/en-us/articles/115002775252"
+      },
+      {
+        "label": "Klaviyo: Abandoned checkout flows",
+        "url": "https://help.klaviyo.com/hc/en-us/articles/115002779411"
+      },
+      {
+        "label": "Klaviyo: Post-purchase flows",
+        "url": "https://help.klaviyo.com/hc/en-us/articles/360028872611"
+      },
+      {
+        "label": "Klaviyo: Winback flows",
+        "url": "https://help.klaviyo.com/hc/en-us/articles/115002775192"
+      },
+      {
+        "label": "Klaviyo: Smart Sending",
+        "url": "https://help.klaviyo.com/hc/en-us/articles/115002779311"
+      },
+      {
+        "label": "Klaviyo: Conversion attribution",
+        "url": "https://help.klaviyo.com/hc/en-us/articles/115005248128"
+      },
+      {
+        "label": "ICO: Electronic mail marketing guidance",
+        "url": "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/"
+      }
+    ]
   },
   {
     "slug": "shopify-speed-optimization",
@@ -399,7 +444,29 @@ export const POSTS: Post[] = [
         ]
       }
     ],
-    "takeaway": "Optimise the measured bottleneck, not just the score. Protect the main image, reduce unnecessary work, reserve space for content, and verify the complete buying journey after every meaningful change."
+    "takeaway": "Optimise the measured bottleneck, not just the score. Protect the main image, reduce unnecessary work, reserve space for content, and verify the complete buying journey after every meaningful change.",
+    "sources": [
+      {
+        "label": "web.dev: Core Web Vitals",
+        "url": "https://web.dev/articles/vitals"
+      },
+      {
+        "label": "web.dev: Measuring Web Vitals",
+        "url": "https://web.dev/articles/vitals-measurement-getting-started"
+      },
+      {
+        "label": "Shopify: Improving storefront performance",
+        "url": "https://help.shopify.com/en/manual/online-store/web-performance/improving-web-performance"
+      },
+      {
+        "label": "Shopify: Storefront images",
+        "url": "https://help.shopify.com/en/manual/online-store/images/theme-images"
+      },
+      {
+        "label": "Shopify: Removing apps and theme code",
+        "url": "https://help.shopify.com/en/manual/apps/uninstalling-apps"
+      }
+    ]
   },
   {
     "slug": "product-page-that-sells",
@@ -488,7 +555,21 @@ export const POSTS: Post[] = [
         ]
       }
     ],
-    "takeaway": "Build the page around the questions real customers ask. Accurate product information, genuine evidence, usable controls, and clear delivery terms form a stronger foundation than pressure tactics or decorative extras."
+    "takeaway": "Build the page around the questions real customers ask. Accurate product information, genuine evidence, usable controls, and clear delivery terms form a stronger foundation than pressure tactics or decorative extras.",
+    "sources": [
+      {
+        "label": "Shopify: Product details",
+        "url": "https://help.shopify.com/en/manual/products/details"
+      },
+      {
+        "label": "Shopify: Product media",
+        "url": "https://help.shopify.com/en/manual/products/product-media"
+      },
+      {
+        "label": "Shopify: Product variants",
+        "url": "https://help.shopify.com/en/manual/products/variants"
+      }
+    ]
   },
   {
     "slug": "seo-for-shopify-stores",
@@ -576,7 +657,29 @@ export const POSTS: Post[] = [
         ]
       }
     ],
-    "takeaway": "Make important pages useful, crawlable, internally linked, and consistent about their preferred URLs. Validate what the live store outputs and use indexing evidence rather than treating an SEO checklist as a guarantee."
+    "takeaway": "Make important pages useful, crawlable, internally linked, and consistent about their preferred URLs. Validate what the live store outputs and use indexing evidence rather than treating an SEO checklist as a guarantee.",
+    "sources": [
+      {
+        "label": "Google Search Central: Canonical URLs",
+        "url": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls"
+      },
+      {
+        "label": "Google Search Central: Product structured data",
+        "url": "https://developers.google.com/search/docs/appearance/structured-data/product"
+      },
+      {
+        "label": "Google Search Central: Sitemaps",
+        "url": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview"
+      },
+      {
+        "label": "Shopify: Submitting your sitemap",
+        "url": "https://help.shopify.com/en/manual/promoting-marketing/seo/find-site-map"
+      },
+      {
+        "label": "Google: Rich Results Test",
+        "url": "https://search.google.com/test/rich-results"
+      }
+    ]
   },
   {
     "slug": "shopify-vs-woocommerce",
@@ -668,6 +771,28 @@ export const POSTS: Post[] = [
         ]
       }
     ],
-    "takeaway": "Choose the platform that meets your non-negotiable requirements and fits the team responsible for running it. Compare total ownership cost and validate critical workflows before committing to a build or migration."
+    "takeaway": "Choose the platform that meets your non-negotiable requirements and fits the team responsible for running it. Compare total ownership cost and validate critical workflows before committing to a build or migration.",
+    "sources": [
+      {
+        "label": "Shopify: Migration planning",
+        "url": "https://help.shopify.com/en/manual/migrating-to-shopify"
+      },
+      {
+        "label": "Shopify: Secure domain connections",
+        "url": "https://help.shopify.com/en/manual/domains/managing-domains/secure-connections"
+      },
+      {
+        "label": "Shopify: URL redirects",
+        "url": "https://help.shopify.com/en/manual/online-store/menus-and-links/url-redirect"
+      },
+      {
+        "label": "WooCommerce: Security documentation",
+        "url": "https://woocommerce.com/documentation/woocommerce/site-admin/security/"
+      },
+      {
+        "label": "WooCommerce: Migration documentation",
+        "url": "https://woocommerce.com/documentation/woocommerce/migrating-to-woocommerce/"
+      }
+    ]
   }
 ];

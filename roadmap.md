@@ -4,5 +4,5 @@
 - [x] Verify a real merchant description end-to-end and check the page on desktop and mobile.
 
 # Educational blog content
-- [ ] Expand all six existing articles with explanations, examples, practical checks, and reliable references without changing their layout.
-- [ ] Verify the expanded articles render and existing article links still work.
+- [x] Expand all six existing articles with explanations, examples, practical checks, and reliable references without changing their layout.
+- [x] Verify the expanded articles render and existing article links still work.

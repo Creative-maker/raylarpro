@@ -11,3 +11,4 @@
 
 - Shopify recommendations use a same-origin public streaming server route and request-scoped AI Gateway Responses helpers, keeping prompts and keys server-only while preserving partial output and explicit cancellation.
 - Persist terminal AI access denials in the server-only gateway state table; clear the entry only after access is restored, so reloads and worker restarts cannot replay blocked requests.
+- Keep blog article bodies and official reference links in the shared Post data model so article pages and previews remain consistent.
