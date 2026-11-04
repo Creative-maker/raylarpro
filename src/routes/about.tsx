@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { CheckCircle2, MessageCircle, Calendar, MapPin, Star } from "lucide-react";
 import profileImg from "@/assets/about-shot.png";
 import { PageHero } from "@/components/site-chrome";
+import { AboutCompany } from "@/components/about-company";
 import { CERTS, WHATSAPP, CALENDLY } from "@/components/site-data";
 
 export const Route = createFileRoute("/about")({
@@ -42,8 +43,10 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <>
-      <PageHero eyebrow="About" title="Meet the Person Behind RaylarPro" />
-      <section className="py-16">
+      <PageHero eyebrow="About" title="About RaylarPro, Your Ecommerce Growth Partner" sub="We help businesses build, optimize, and grow successful online stores." />
+      <AboutCompany />
+      <section className="border-t border-border py-16">
+        <h2 className="mb-10 text-center text-3xl font-extrabold tracking-tight md:text-4xl">Meet the Person Behind RaylarPro</h2>
         <div className="mx-auto grid max-w-6xl gap-12 px-4 md:px-6 lg:grid-cols-[auto_1fr]">
           <div className="mx-auto lg:mx-0">
             <div className="relative h-72 w-72 md:h-80 md:w-80">
