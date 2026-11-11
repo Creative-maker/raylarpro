@@ -131,6 +131,139 @@ export type Post = {
 };
 
 export const POSTS: Post[] = [
+{
+  "slug": "shopify-ecommerce-benchmarks-2026",
+  "title": "Shopify eCommerce Benchmarks 2026: Conversion, Cart Abandonment, Speed and Funnel Targets",
+  "tag": "Benchmarks",
+  "date": "Nov 2026",
+  "readTime": "12 min read",
+  "desc": "A citable reference of eCommerce benchmarks for Shopify merchants, covering conversion rates, cart abandonment, Core Web Vitals, funnel stages, and how to use benchmarks responsibly.",
+  "img": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=900&fit=crop",
+  "intro": "Merchants constantly ask whether their numbers are good. A benchmark can answer that question, but only when you understand where the figure came from, what it measures, and how different your store may be from the average. This reference brings together widely cited public benchmarks, official performance thresholds, and practical planning ranges RaylarPro uses during store audits. Every published third-party figure links to its source. Where a number is a planning range rather than measured research, it is labelled clearly so you can quote it accurately.",
+  "sections": [
+    {
+      "heading": "How to read and cite these benchmarks",
+      "body": [
+        "Benchmarks fall into three groups in this report. Published research figures come from named organisations and are linked in the sources section. Official thresholds, such as Core Web Vitals, are definitions set by Google rather than averages. Planning ranges are RaylarPro working targets drawn from audit experience, and they should be treated as starting points for discussion, not as statistical findings.",
+        "When citing this page, please name the original source for published figures and attribute planning ranges to RaylarPro with a link to this report. That keeps the chain of evidence intact for your readers."
+      ]
+    },
+    {
+      "heading": "Key figures at a glance",
+      "body": [
+        "These are the numbers most often requested by writers and merchants. They are useful for orientation, but your own trend over time is always more meaningful than a comparison with a global average."
+      ],
+      "list": [
+        "Average documented online cart abandonment rate: about 70%, based on Baymard Institute's aggregation of 49 studies (published research).",
+        "Largest Contentful Paint target: 2.5 seconds or less for the 75th percentile of page loads (official Google threshold).",
+        "Interaction to Next Paint target: 200 milliseconds or less (official Google threshold).",
+        "Cumulative Layout Shift target: 0.1 or less (official Google threshold).",
+        "Typical eCommerce conversion rate planning range: 1% to 3% of sessions, with large variation by niche, price, and traffic source (RaylarPro planning range).",
+        "Mobile share of sessions for most consumer Shopify stores we audit: commonly above 60% (RaylarPro planning range)."
+      ]
+    },
+    {
+      "heading": "Conversion rate benchmarks by store type",
+      "body": [
+        "Conversion rate is completed orders divided by sessions. It is strongly influenced by price point, purchase frequency, and how warm the traffic is. A £20 consumable bought repeatedly will usually convert far better than a £900 piece of furniture that customers research for weeks.",
+        "The planning ranges below are what RaylarPro uses to frame a first conversation during an audit. A store outside its range is not automatically failing; it simply tells us where to look first."
+      ],
+      "list": [
+        "Low price, repeat purchase products such as beauty, supplements, pet supplies, and food: roughly 2% to 4% (planning range).",
+        "Fashion and apparel: roughly 1.5% to 3%, with returns and sizing as major factors (planning range).",
+        "Home, furniture, and garden: roughly 0.8% to 2%, reflecting longer research windows (planning range).",
+        "Electronics and high consideration products: roughly 0.8% to 2% (planning range).",
+        "Jewellery and luxury goods: roughly 0.5% to 1.5%, where assisted and offline sales matter (planning range)."
+      ]
+    },
+    {
+      "heading": "Cart abandonment and checkout benchmarks",
+      "body": [
+        "Baymard Institute calculates an average documented online cart abandonment rate of roughly 70% across dozens of studies. Many visitors add items while browsing with no intention to buy that session, so a high rate is normal. The useful question is which abandonment is caused by fixable friction.",
+        "Baymard's checkout research repeatedly finds that unexpected extra costs, such as shipping, taxes, and fees, are the leading reason for abandonment among shoppers who intended to buy. Forced account creation, slow delivery, and a complicated checkout also rank highly. For Shopify merchants, showing delivery costs early and offering accelerated wallets are usually the highest leverage checkout improvements."
+      ]
+    },
+    {
+      "heading": "Funnel stage planning targets",
+      "body": [
+        "Looking at each stage of the journey is more actionable than looking only at the final conversion rate. Shopify's reports show sessions with cart additions, sessions reaching checkout, and sessions that converted, which makes this analysis easy to repeat monthly.",
+        "The ranges below are RaylarPro planning targets for a healthy consumer store with mixed traffic. Paid social traffic usually sits lower; email and returning visitors usually sit higher."
+      ],
+      "list": [
+        "Sessions that add to cart: around 5% to 10% (planning range).",
+        "Cart sessions that reach checkout: around 40% to 60% (planning range).",
+        "Checkout sessions that complete an order: around 45% to 65% (planning range).",
+        "If one stage is far below the others, fix that stage first before spending more on traffic."
+      ]
+    },
+    {
+      "heading": "Speed and Core Web Vitals benchmarks",
+      "body": [
+        "Google defines three Core Web Vitals. Largest Contentful Paint measures loading, and a good score is 2.5 seconds or less. Interaction to Next Paint measures responsiveness, and a good score is 200 milliseconds or less. Cumulative Layout Shift measures visual stability, and a good score is 0.1 or less. Google assesses each at the 75th percentile of real visits, split by mobile and desktop.",
+        "These are thresholds, not averages, which makes them ideal benchmarks. Check your field data in Search Console's Core Web Vitals report or PageSpeed Insights. Lab scores from a single test are useful for debugging but do not represent what customers experience."
+      ]
+    },
+    {
+      "heading": "Mobile versus desktop behaviour",
+      "body": [
+        "In most consumer stores we audit, mobile brings the majority of sessions while desktop converts at a higher rate per session. That gap is expected, because people browse on phones and sometimes finish on larger screens. It becomes a problem when the gap widens over time or when mobile users drop at a specific step such as variant selection or delivery entry.",
+        "Measure conversion separately by device, test checkout on a real mid range phone, and make sure Shop Pay, Apple Pay, and Google Pay are available where appropriate."
+      ]
+    },
+    {
+      "heading": "Average order value and retention",
+      "body": [
+        "Average order value is revenue divided by orders. It depends so heavily on product catalogue and pricing that cross store comparisons are rarely helpful. Track your own AOV monthly, and evaluate bundles, free shipping thresholds, and post purchase offers by whether they raise contribution margin, not just order size.",
+        "For repeat purchase categories, the share of orders from returning customers is a key health indicator. Email and SMS automation, covered in our Klaviyo flow guide, are usually the most efficient levers here."
+      ]
+    },
+    {
+      "heading": "How to use benchmarks without misleading yourself",
+      "body": [
+        "Benchmarks are context, not targets to chase blindly. A store can raise its conversion rate by cutting paid traffic while losing total profit, or lower it by expanding into cold audiences while growing revenue. Always pair rate metrics with absolute orders, revenue, and margin.",
+        "Compare like with like: the same season, similar promotions, and the same traffic mix. Use at least several weeks of data before drawing conclusions, and document changes so you can explain shifts later."
+      ]
+    },
+    {
+      "heading": "Methodology and limitations",
+      "body": [
+        "Published figures are quoted from the sources listed below and were checked against those pages at the time of writing. Official thresholds come from Google's web.dev documentation. Planning ranges reflect RaylarPro's experience auditing Shopify stores and are not a statistically representative survey. They will not apply equally to every niche, region, or business model.",
+        "This report will be reviewed periodically. If you spot an outdated figure, contact RaylarPro and we will check and correct it."
+      ]
+    }
+  ],
+  "takeaway": "Use published benchmarks for orientation, official Core Web Vitals thresholds as firm targets, and your own month on month trends as the real measure of progress. If you would like your store compared against these benchmarks, request a free RaylarPro store audit.",
+  "sources": [
+    {
+      "label": "Baymard Institute: Cart abandonment rate statistics",
+      "url": "https://baymard.com/lists/cart-abandonment-rate"
+    },
+    {
+      "label": "web.dev: Web Vitals",
+      "url": "https://web.dev/articles/vitals"
+    },
+    {
+      "label": "web.dev: Largest Contentful Paint",
+      "url": "https://web.dev/articles/lcp"
+    },
+    {
+      "label": "web.dev: Interaction to Next Paint",
+      "url": "https://web.dev/articles/inp"
+    },
+    {
+      "label": "web.dev: Cumulative Layout Shift",
+      "url": "https://web.dev/articles/cls"
+    },
+    {
+      "label": "Shopify Help Center: Analytics and reports",
+      "url": "https://help.shopify.com/en/manual/reports-and-analytics"
+    },
+    {
+      "label": "Google Search Console: Core Web Vitals report",
+      "url": "https://support.google.com/webmasters/answer/9205520"
+    }
+  ]
+},
   {
     "slug": "shopify-conversion-checklist",
     "title": "The 12-Point Shopify Conversion Checklist",

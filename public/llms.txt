@@ -26,6 +26,7 @@ RaylarPro helps Shopify merchants design, build, and grow their online stores. W
 
 ## Blog
 
+- [Shopify eCommerce Benchmarks 2026](https://www.raylarpro.com/blog/shopify-ecommerce-benchmarks-2026): Citable conversion, cart abandonment, Core Web Vitals and funnel benchmarks for Shopify stores.
 - [Shopify Conversion Checklist](https://www.raylarpro.com/blog/shopify-conversion-checklist): Fixes that lift Shopify conversion rates.
 - [Klaviyo Flows That Print Money](https://www.raylarpro.com/blog/klaviyo-flows-that-print-money): Five automated email flows every store needs.
 - [Shopify Speed Optimization](https://www.raylarpro.com/blog/shopify-speed-optimization): Making a Shopify store load faster.
